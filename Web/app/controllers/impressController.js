@@ -5,7 +5,7 @@ var Web;
         var ImpressController = (function () {
             function ImpressController() {
                 this.message = "Message from State 1";
-                var show = Impressive(document, window);
+                //var show = Impressive(document, window);
             }
             return ImpressController;
         })();

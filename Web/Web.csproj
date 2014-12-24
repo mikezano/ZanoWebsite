@@ -60,14 +60,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\controllers\css3ExperimentsController.js" />
     <Content Include="app\controllers\impress.js" />
-    <Content Include="app\controllers\impressController.js" />
-    <Content Include="app\controllers\state1.js" />
     <Content Include="content\bootstrap-theme.css" />
     <Content Include="content\bootstrap-theme.min.css" />
     <Content Include="content\bootstrap.css" />
     <Content Include="content\bootstrap.min.css" />
+    <Content Include="css\home.css">
+      <DependentUpon>home.less</DependentUpon>
+    </Content>
     <Content Include="css\site.css">
       <DependentUpon>site.less</DependentUpon>
     </Content>
@@ -93,10 +93,6 @@
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="app\app.js.map" />
-    <Content Include="app\controllers\css3ExperimentsController.js.map" />
-    <Content Include="app\controllers\impress.js.map" />
-    <Content Include="app\controllers\impressController.js.map" />
-    <Content Include="app\controllers\state1.js.map" />
     <Content Include="scripts\angular-animate.min.js.map" />
     <Content Include="scripts\angular-route.min.js.map" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -107,6 +103,10 @@
     <Content Include="css\site.less" />
     <Content Include="css\site.css.map">
       <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="css\home.less" />
+    <Content Include="css\home.css.map">
+      <DependentUpon>home.css</DependentUpon>
     </Content>
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />
@@ -127,6 +127,13 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="scripts\npm.js" />
+    <Content Include="views\css3.html" />
+    <Content Include="views\header.html" />
+    <Content Include="views\home.html" />
+    <Content Include="views\impress-zano.html" />
+    <Content Include="views\impress.html" />
+    <Content Include="views\state1.html" />
+    <Content Include="views\state2.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +143,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.ts" />
     <TypeScriptCompile Include="app\controllers\css3ExperimentsController.ts" />
+    <TypeScriptCompile Include="app\controllers\homeController.ts" />
     <TypeScriptCompile Include="app\controllers\impressController.ts" />
     <TypeScriptCompile Include="app\controllers\state1.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-animate.d.ts" />

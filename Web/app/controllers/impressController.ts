@@ -9,7 +9,7 @@ module Web.Client {
 
         constructor() {
             this.message = "Message from State 1";
-            var show = Impressive(document, window);
+            //var show = Impressive(document, window);
         }
     }
 }
