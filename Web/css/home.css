@@ -4,25 +4,24 @@
 #zano-container {
   position: absolute;
   left: 50%;
-  margin-left: -500px;
+  margin-left: -250px;
   top: 200px;
-  width: 1000px;
+  width: 500px;
   height: 500px;
   background: linear-gradient(#005983, #01577d);
-  border-radius: 10px;
   border: 1px solid #076593;
   box-shadow: 10px 10px 10px black;
   overflow: hidden;
 }
 #zano-container #bottom-left-triangle,
 #zano-container #top-right-triangle {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   position: absolute;
 }
 #zano-container #bottom-left-triangle {
   background-image: url(../images/bottom-left-triangle.png);
-  top: 96px;
+  top: 200px;
 }
 #zano-container #top-right-triangle {
   background-image: url(../images/top-right-triangle.png);
@@ -30,59 +29,83 @@
 }
 #zano-container #bottom-left-curtain,
 #zano-container #top-right-curtain {
-  width: 700px;
+  width: 500px;
   height: 500px;
   position: absolute;
   top: -1px;
 }
 #zano-container #bottom-left-curtain {
   background-image: url(../images/bottom-left-curtain.png);
-  -moz-animation: left-curtain 1s infinite ease-in-out;
-  -o-animation: left-curtain 1s infinite ease-in-out;
-  -webkit-animation: left-curtain 1s infinite ease-in-out;
-  animation: left-curtain 1s infinite ease-in-out;
+  -moz-animation: left-curtain 4s infinite ease-in-out;
+  -o-animation: left-curtain 4s infinite ease-in-out;
+  -webkit-animation: left-curtain 4s infinite ease-in-out;
+  animation: left-curtain 4s infinite ease-in-out;
 }
 @keyframes left-curtain {
+  0% {
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
   0%,
   100% {
     left: 0;
   }
   50% {
-    left: -300px;
+    left: -100px;
   }
 }
 @-webkit-keyframes left-curtain {
+  0% {
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
   0%,
   100% {
     left: 0;
   }
   50% {
-    left: -300px;
+    left: -100px;
   }
 }
 #zano-container #top-right-curtain {
   background-image: url(../images/top-right-curtain.png);
-  -moz-animation: right-curtain 1s infinite ease-in-out;
-  -o-animation: right-curtain 1s infinite ease-in-out;
-  -webkit-animation: right-curtain 1s infinite ease-in-out;
-  animation: right-curtain 1s infinite ease-in-out;
+  -moz-animation: right-curtain 4s infinite ease-in-out;
+  -o-animation: right-curtain 4s infinite ease-in-out;
+  -webkit-animation: right-curtain 4s infinite ease-in-out;
+  animation: right-curtain 4s infinite ease-in-out;
 }
 @keyframes right-curtain {
+  0% {
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
   0%,
   100% {
     right: 0;
   }
   50% {
-    right: -300px;
+    right: -100px;
   }
 }
 @-webkit-keyframes right-curtain {
+  0% {
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
   0%,
   100% {
     right: 0;
   }
   50% {
-    right: -300px;
+    right: -100px;
   }
 }
 #zano-container #menu {

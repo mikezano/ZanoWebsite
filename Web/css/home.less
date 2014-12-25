@@ -1,6 +1,6 @@
 ﻿@import "cssMixins.less";
 
-@width: 1000px;
+@width: 500px;
 @height:500px;
 
 body{
@@ -15,7 +15,7 @@ body{
     height:@height;
     background: linear-gradient(#005983, #01577D);
     //border-image: linear-gradient(blue, red);
-    border-radius:10px;
+    //border-radius:10px;
     border:1px solid #076593;
     box-shadow:10px 10px 10px black;
     overflow:hidden;
@@ -23,14 +23,14 @@ body{
 
 
     #bottom-left-triangle, #top-right-triangle{
-        width:400px;
-        height:400px;
+        width:300px;
+        height:300px;
         position:absolute;        
     }
 
     #bottom-left-triangle{
         background-image: url(../images/bottom-left-triangle.png);
-        top:96px;
+        top:200px;
     }
 
     #top-right-triangle{
@@ -39,7 +39,7 @@ body{
     }
 
     #bottom-left-curtain, #top-right-curtain{
-        width:700px;
+        width:500px;
         height:500px;
         position:absolute;
         top:-1px;
@@ -48,20 +48,24 @@ body{
     #bottom-left-curtain{
         background-image: url(../images/bottom-left-curtain.png);
 
-        .custom-animation-frames(left-curtain, 1s, infinite, ease-in-out, 
+        .custom-animation-frames(left-curtain, 4s, infinite, ease-in-out, 
         {
-            0%,100%{left:0;}
-            50%{left:-300px;}
+            0%{-moz-animation-delay:2s; -o-animation-delay:2s; -webkit-animation-delay:2s; animation-delay:2s;}
+            0%,100%{
+                left:0;
+            }
+            50%{left:-100px;}
         });  
     }
 
     #top-right-curtain{
         background-image: url(../images/top-right-curtain.png);
 
-        .custom-animation-frames(right-curtain, 1s, infinite, ease-in-out, 
+        .custom-animation-frames(right-curtain, 4s, infinite, ease-in-out, 
         {
+            0%{-moz-animation-delay:2s; -o-animation-delay:2s; -webkit-animation-delay:2s; animation-delay:2s;}
             0%,100%{right:0;}
-            50%{right:-300px;}
+            50%{right:-100px;}
         });  
     }
 

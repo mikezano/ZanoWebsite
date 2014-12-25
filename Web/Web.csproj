@@ -65,6 +65,9 @@
     <Content Include="content\bootstrap-theme.min.css" />
     <Content Include="content\bootstrap.css" />
     <Content Include="content\bootstrap.min.css" />
+    <Content Include="css\cssMixins.css">
+      <DependentUpon>cssMixins.less</DependentUpon>
+    </Content>
     <Content Include="css\home.css">
       <DependentUpon>home.less</DependentUpon>
     </Content>
@@ -75,6 +78,10 @@
       <DependentUpon>site.css</DependentUpon>
     </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\bottom-left-triangle.png" />
+    <Content Include="images\bottom-left-curtain.png" />
+    <Content Include="images\top-right-curtain.png" />
+    <Content Include="images\top-right-triangle.png" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
     <Content Include="scripts\angular-route.js" />
@@ -108,6 +115,8 @@
     <Content Include="css\home.css.map">
       <DependentUpon>home.css</DependentUpon>
     </Content>
+    <Content Include="css\cssMixins.less" />
+    <None Include="Properties\PublishProfiles\zano.pubxml" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\bootstrap.js" />
