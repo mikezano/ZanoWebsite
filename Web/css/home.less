@@ -1,9 +1,88 @@
-﻿@width: 800px;
-@height:400px;
+﻿@import "cssMixins.less";
 
+@width: 1000px;
+@height:500px;
+
+body{
+    background-color:#222;
+}
 #zano-container{
+    position:absolute;
+    left:50%;
+    margin-left: -1 * @width/2;
+    top:200px;
     width:@width;
     height:@height;
-    background: linear-gradient(blue, red);
-    border-image: linear-gradient(blue, red);;
+    background: linear-gradient(#005983, #01577D);
+    //border-image: linear-gradient(blue, red);
+    border-radius:10px;
+    border:1px solid #076593;
+    box-shadow:10px 10px 10px black;
+    overflow:hidden;
+
+
+
+    #bottom-left-triangle, #top-right-triangle{
+        width:400px;
+        height:400px;
+        position:absolute;        
+    }
+
+    #bottom-left-triangle{
+        background-image: url(../images/bottom-left-triangle.png);
+        top:96px;
+    }
+
+    #top-right-triangle{
+        background-image: url(../images/top-right-triangle.png);
+        right:0;
+    }
+
+    #bottom-left-curtain, #top-right-curtain{
+        width:700px;
+        height:500px;
+        position:absolute;
+        top:-1px;
+    }
+
+    #bottom-left-curtain{
+        background-image: url(../images/bottom-left-curtain.png);
+
+        .custom-animation-frames(left-curtain, 1s, infinite, ease-in-out, 
+        {
+            0%,100%{left:0;}
+            50%{left:-300px;}
+        });  
+    }
+
+    #top-right-curtain{
+        background-image: url(../images/top-right-curtain.png);
+
+        .custom-animation-frames(right-curtain, 1s, infinite, ease-in-out, 
+        {
+            0%,100%{right:0;}
+            50%{right:-300px;}
+        });  
+    }
+
+    #menu{
+        color:white;
+        position:absolute;
+        top:200px;
+        @indent: 40px;
+
+        & ul{
+            list-style-type:none;
+            padding-left:20px;
+        }
+
+        .item1, .item2, .item3, .item4{
+            margin-bottom:20px;
+        }
+
+        .item1{padding-left:@indent * 0;}
+        .item2{padding-left:@indent * 1;}
+        .item3{padding-left:@indent * 2;}
+        .item4{padding-left:@indent * 3;}
+    }
 }

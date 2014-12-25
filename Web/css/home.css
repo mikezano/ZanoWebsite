@@ -1,7 +1,115 @@
-﻿#zano-container {
-  width: 800px;
+﻿body {
+  background-color: #222;
+}
+#zano-container {
+  position: absolute;
+  left: 50%;
+  margin-left: -500px;
+  top: 200px;
+  width: 1000px;
+  height: 500px;
+  background: linear-gradient(#005983, #01577d);
+  border-radius: 10px;
+  border: 1px solid #076593;
+  box-shadow: 10px 10px 10px black;
+  overflow: hidden;
+}
+#zano-container #bottom-left-triangle,
+#zano-container #top-right-triangle {
+  width: 400px;
   height: 400px;
-  background: linear-gradient(#0000ff, #ff0000);
-  border-image: linear-gradient(#0000ff, #ff0000);
+  position: absolute;
+}
+#zano-container #bottom-left-triangle {
+  background-image: url(../images/bottom-left-triangle.png);
+  top: 96px;
+}
+#zano-container #top-right-triangle {
+  background-image: url(../images/top-right-triangle.png);
+  right: 0;
+}
+#zano-container #bottom-left-curtain,
+#zano-container #top-right-curtain {
+  width: 700px;
+  height: 500px;
+  position: absolute;
+  top: -1px;
+}
+#zano-container #bottom-left-curtain {
+  background-image: url(../images/bottom-left-curtain.png);
+  -moz-animation: left-curtain 1s infinite ease-in-out;
+  -o-animation: left-curtain 1s infinite ease-in-out;
+  -webkit-animation: left-curtain 1s infinite ease-in-out;
+  animation: left-curtain 1s infinite ease-in-out;
+}
+@keyframes left-curtain {
+  0%,
+  100% {
+    left: 0;
+  }
+  50% {
+    left: -300px;
+  }
+}
+@-webkit-keyframes left-curtain {
+  0%,
+  100% {
+    left: 0;
+  }
+  50% {
+    left: -300px;
+  }
+}
+#zano-container #top-right-curtain {
+  background-image: url(../images/top-right-curtain.png);
+  -moz-animation: right-curtain 1s infinite ease-in-out;
+  -o-animation: right-curtain 1s infinite ease-in-out;
+  -webkit-animation: right-curtain 1s infinite ease-in-out;
+  animation: right-curtain 1s infinite ease-in-out;
+}
+@keyframes right-curtain {
+  0%,
+  100% {
+    right: 0;
+  }
+  50% {
+    right: -300px;
+  }
+}
+@-webkit-keyframes right-curtain {
+  0%,
+  100% {
+    right: 0;
+  }
+  50% {
+    right: -300px;
+  }
+}
+#zano-container #menu {
+  color: white;
+  position: absolute;
+  top: 200px;
+}
+#zano-container #menu ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+#zano-container #menu .item1,
+#zano-container #menu .item2,
+#zano-container #menu .item3,
+#zano-container #menu .item4 {
+  margin-bottom: 20px;
+}
+#zano-container #menu .item1 {
+  padding-left: 0px;
+}
+#zano-container #menu .item2 {
+  padding-left: 40px;
+}
+#zano-container #menu .item3 {
+  padding-left: 80px;
+}
+#zano-container #menu .item4 {
+  padding-left: 120px;
 }
 /*# sourceMappingURL=home.css.map */
