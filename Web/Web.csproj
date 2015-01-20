@@ -119,6 +119,7 @@
       <DependentUpon>home.css</DependentUpon>
     </Content>
     <Content Include="css\cssMixins.less" />
+    <Content Include="fonts\Spac3_neon free promo.ttf" />
     <None Include="Properties\PublishProfiles\zano.pubxml" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />
