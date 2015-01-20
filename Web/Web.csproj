@@ -120,6 +120,12 @@
     </Content>
     <Content Include="css\cssMixins.less" />
     <Content Include="fonts\Spac3_neon free promo.ttf" />
+    <Content Include="fonts\Dubtronic-Inline.otf" />
+    <Content Include="fonts\Dubtronic-Solid.otf" />
+    <Content Include="fonts\orbitron-black.otf" />
+    <Content Include="fonts\orbitron-bold.otf" />
+    <Content Include="fonts\orbitron-light.otf" />
+    <Content Include="fonts\orbitron-medium.otf" />
     <None Include="Properties\PublishProfiles\zano.pubxml" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />

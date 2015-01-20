@@ -61,14 +61,14 @@ body {
   bottom: 0;
   left: 0;
   background: linear-gradient(45deg, #303030, #003146 20%, #004766 49%, #006f9f 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0));
-  -moz-animation: bottom-left-triangle 6s 1 ease-in-out;
-  -o-animation: bottom-left-triangle 6s 1 ease-in-out;
-  -webkit-animation: bottom-left-triangle 6s 1 ease-in-out;
-  animation: bottom-left-triangle 6s 1 ease-in-out;
+  -moz-animation: bottom-left-triangle 1s 1 ease-in-out;
+  -o-animation: bottom-left-triangle 1s 1 ease-in-out;
+  -webkit-animation: bottom-left-triangle 1s 1 ease-in-out;
+  animation: bottom-left-triangle 1s 1 ease-in-out;
 }
 @keyframes bottom-left-triangle {
   0% {
-    left: 0px;
+    left: -100px;
   }
   50% {
     left: 0;
@@ -76,7 +76,7 @@ body {
 }
 @-webkit-keyframes bottom-left-triangle {
   0% {
-    left: 0px;
+    left: -100px;
   }
   50% {
     left: 0;
@@ -89,14 +89,14 @@ body {
   top: 0;
   right: 0;
   background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #006f9f 50%, #004766 51%, #003146 80%, #303030);
-  -moz-animation: intro-lowerleft-triangle 6s 1 ease-in-out;
-  -o-animation: intro-lowerleft-triangle 6s 1 ease-in-out;
-  -webkit-animation: intro-lowerleft-triangle 6s 1 ease-in-out;
-  animation: intro-lowerleft-triangle 6s 1 ease-in-out;
+  -moz-animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+  -o-animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+  -webkit-animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+  animation: intro-lowerleft-triangle 1s 1 ease-in-out;
 }
 @keyframes intro-lowerleft-triangle {
   0% {
-    right: 0px;
+    right: -100px;
   }
   50% {
     right: 0;
@@ -104,17 +104,17 @@ body {
 }
 @-webkit-keyframes intro-lowerleft-triangle {
   0% {
-    right: 0px;
+    right: -100px;
   }
   50% {
     right: 0;
   }
 }
 #zano-container {
-  -moz-animation: intro 6s 1 ease-in-out;
-  -o-animation: intro 6s 1 ease-in-out;
-  -webkit-animation: intro 6s 1 ease-in-out;
-  animation: intro 6s 1 ease-in-out;
+  -moz-animation: intro 1s 1 ease-in-out;
+  -o-animation: intro 1s 1 ease-in-out;
+  -webkit-animation: intro 1s 1 ease-in-out;
+  animation: intro 1s 1 ease-in-out;
   position: absolute;
   left: 50%;
   margin-left: -300px;
@@ -146,10 +146,14 @@ body {
 }
 @keyframes intro {
   0% {
-    width: 200px;
-    margin-left: -150px;
+    width: 400px;
+    margin-left: -200px;
     height: 10px;
     top: 400px;
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
   }
   50% {
     width: 600px;
@@ -163,10 +167,14 @@ body {
 }
 @-webkit-keyframes intro {
   0% {
-    width: 200px;
-    margin-left: -150px;
+    width: 400px;
+    margin-left: -200px;
     height: 10px;
     top: 400px;
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
   }
   50% {
     width: 600px;
