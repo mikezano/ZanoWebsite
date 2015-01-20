@@ -71,6 +71,9 @@
     <Content Include="css\home.css">
       <DependentUpon>home.less</DependentUpon>
     </Content>
+    <Content Include="css\home.min.css">
+      <DependentUpon>home.css</DependentUpon>
+    </Content>
     <Content Include="css\site.css">
       <DependentUpon>site.less</DependentUpon>
     </Content>

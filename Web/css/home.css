@@ -7,7 +7,7 @@
 }
 #css_lowerleft_curtain {
   position: absolute;
-  left: -300px;
+  left: -299px;
   top: 0;
   width: 400px;
   height: 400px;
@@ -29,7 +29,7 @@
 }
 #css_topright_curtain {
   position: absolute;
-  left: 500px;
+  left: 499px;
   top: 0;
   width: 400px;
   height: 400px;
@@ -37,7 +37,7 @@
   border-bottom: 1px solid #196a8e;
   border-right: 1px solid #196a8e;
 }
-#css_topright_curtain::after {
+#css_topright_curtain::before {
   content: "";
   display: block;
   width: 400px;
@@ -47,6 +47,7 @@
   margin-left: 1px;
   left: -400px;
   background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #196a8e 50%, #005981 60%, #005981);
+  border-bottom: 1px solid #196a8e;
 }
 #css_lowerleft_triangle {
   width: 200px;
@@ -105,7 +106,7 @@
   }
   0%,
   100% {
-    left: -300px;
+    left: -299px;
   }
   50% {
     left: -400px;
@@ -120,7 +121,7 @@
   }
   0%,
   100% {
-    left: -300px;
+    left: -299px;
   }
   50% {
     left: -400px;
@@ -141,7 +142,7 @@
   }
   0%,
   100% {
-    left: 500px;
+    left: 499px;
   }
   50% {
     left: 600px;
@@ -156,7 +157,7 @@
   }
   0%,
   100% {
-    left: 500px;
+    left: 499px;
   }
   50% {
     left: 600px;
