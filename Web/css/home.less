@@ -3,11 +3,15 @@
 @width: 600px;
 @height:400px;
 
+@baseBlueLighten2:#00a0e5;
+@baseBlueLighten1:#006f9f;
+@baseBlue: #005a81;
+@baseBlueDarken1:#004766;
+@baseBlueDarken2:#003146;
+
 body{
 
-    //background: linear-gradient(#303030, black, #303030 ); /* Standard syntax */
-    //background: linear-gradient(black, #303030 20%,black 80% ); /* Standard syntax */
-    background: linear-gradient(#303030, #444444 45%,  #444444 55%, #303030 ); /* Standard syntax */
+    background: linear-gradient(#303030, #444444 45%,  #444444 55%, #303030 );
     height:100%;
     background-repeat: no-repeat;
     background-attachment: fixed; //makes it so that when you scroll, background will not
@@ -39,7 +43,6 @@ body{
     }
 }
 
-
 #css_topright_curtain{
 
     position:absolute;
@@ -69,16 +72,74 @@ body{
 
 #css_lowerleft_triangle{
 
-    width: 200px;
-    height:200px;
+    width: 300px;
+    height:300px;
     position:absolute;
-    top:200px;
+    top:100px;
     left:0;
-    background: linear-gradient(45deg,  red, #005981 40%,  #196a8e 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
-    border-bottom:1px solid #196a8e;
+    background: linear-gradient(45deg, #303030, @baseBlueDarken2 20%,  @baseBlueDarken1 49%, @baseBlueLighten1 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
+
+    .custom-animation-frames(intro-lowerleft-triangle, 1s, 1, ease-in-out, {
+        0%{
+            top:0;    
+            left:200px;     
+        }
+        50%{          
+            top:0;
+            left:0;
+        }
+        100%{
+            top:100px;
+        }
+    });
+}
+
+#css_topright_triangle{
+
+    width: 300px;
+    height:300px;
+    position:absolute;
+    top:0;
+    right:0;
+    background: linear-gradient(45deg, rgba(0,0,0,0), rgba(0,0,0,0) 50%, @baseBlueLighten1 50%, @baseBlueDarken1 51%, @baseBlueDarken2 80%, #303030);
+
+    .custom-animation-frames(intro-lowerleft-triangle, 1s, 1, ease-in-out, {
+        0%{
+            top:0;    
+            right:100px;     
+        }
+        50%{          
+            top:0;
+            right:0;
+        }
+
+    });
+
 }
 
 #zano-container{
+
+
+    .custom-animation-frames(intro, 1s, 1, ease-in-out, {
+        0%{
+            width:200px;
+            margin-left:-150px;  
+            height:10px; 
+           // top:400px;         
+        }
+
+        50%{          
+            width:600px;
+            margin-left:-300px;  
+            height:10px;
+            //top:400px;
+        }
+        100%{
+            height:400px;
+            //top:200px;
+        }
+    });
+
     position:absolute;
     left:50%;
     margin-left: -1 * @width/2;
@@ -89,7 +150,7 @@ body{
     //border-image: linear-gradient(blue, red);
     //border-radius:10px;
     border:1px solid #076593;
-    box-shadow:10px 10px 10px black;
+    box-shadow:10px 10px 10px #303030;
     overflow:hidden;
 
     #bottom-left-triangle, #top-right-triangle{
@@ -158,4 +219,6 @@ body{
         .item3{padding-left:@indent * 2;}
         .item4{padding-left:@indent * 3;}
     }
+
+    
 }

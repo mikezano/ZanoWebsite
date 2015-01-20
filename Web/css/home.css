@@ -1,6 +1,5 @@
 ﻿body {
   background: linear-gradient(#303030, #444444 45%, #444444 55%, #303030);
-  /* Standard syntax */
   height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -50,15 +49,80 @@
   border-bottom: 1px solid #196a8e;
 }
 #css_lowerleft_triangle {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   position: absolute;
-  top: 200px;
+  top: 100px;
   left: 0;
-  background: linear-gradient(45deg, #ff0000, #005981 40%, #196a8e 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0));
-  border-bottom: 1px solid #196a8e;
+  background: linear-gradient(45deg, #303030, #003146 20%, #004766 49%, #006f9f 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0));
+  -moz-animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+  -o-animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+  -webkit-animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+  animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+}
+@keyframes intro-lowerleft-triangle {
+  0% {
+    top: 0;
+    left: 200px;
+  }
+  50% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: 100px;
+  }
+}
+@-webkit-keyframes intro-lowerleft-triangle {
+  0% {
+    top: 0;
+    left: 200px;
+  }
+  50% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: 100px;
+  }
+}
+#css_topright_triangle {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #006f9f 50%, #004766 51%, #003146 80%, #303030);
+  -moz-animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+  -o-animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+  -webkit-animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+  animation: intro-lowerleft-triangle 1s 1 ease-in-out;
+}
+@keyframes intro-lowerleft-triangle {
+  0% {
+    top: 0;
+    right: 100px;
+  }
+  50% {
+    top: 0;
+    right: 0;
+  }
+}
+@-webkit-keyframes intro-lowerleft-triangle {
+  0% {
+    top: 0;
+    right: 100px;
+  }
+  50% {
+    top: 0;
+    right: 0;
+  }
 }
 #zano-container {
+  -moz-animation: intro 1s 1 ease-in-out;
+  -o-animation: intro 1s 1 ease-in-out;
+  -webkit-animation: intro 1s 1 ease-in-out;
+  animation: intro 1s 1 ease-in-out;
   position: absolute;
   left: 50%;
   margin-left: -300px;
@@ -67,8 +131,38 @@
   height: 400px;
   background: linear-gradient(#005983, #01577d);
   border: 1px solid #076593;
-  box-shadow: 10px 10px 10px black;
+  box-shadow: 10px 10px 10px #303030;
   overflow: hidden;
+}
+@keyframes intro {
+  0% {
+    width: 200px;
+    margin-left: -150px;
+    height: 10px;
+  }
+  50% {
+    width: 600px;
+    margin-left: -300px;
+    height: 10px;
+  }
+  100% {
+    height: 400px;
+  }
+}
+@-webkit-keyframes intro {
+  0% {
+    width: 200px;
+    margin-left: -150px;
+    height: 10px;
+  }
+  50% {
+    width: 600px;
+    margin-left: -300px;
+    height: 10px;
+  }
+  100% {
+    height: 400px;
+  }
 }
 #zano-container #bottom-left-triangle,
 #zano-container #top-right-triangle {
