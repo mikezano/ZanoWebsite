@@ -22,9 +22,24 @@ body{
     background-attachment: fixed; //makes it so that when you scroll, background will not
 }
 
+.setSizeAndPosition(@width, @height, @position, @left, @top, @right, @bottom, @margin-left)
+{
+    width: @width;
+    height: @height;
+    position: @position;
+    left: @left;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    margin-left: @margin-left;
+}
+
 @curtain_size: 400px;
 #bottom-left-curtain{
     display:none;
+
+    .setSizeAndPosition(@curtain_size, @curtain_size, absolute, -299px, 0,,,);
+
     position:absolute;
     left:-299px;   
     top:0; 

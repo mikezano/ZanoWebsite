@@ -1,0 +1,91 @@
+﻿
+$width: 600px;
+$height:400px;
+
+$baseBlueLighten2:#00a0e5;
+$baseBlueLighten1:#006f9f;
+$baseBlue: #005a81;
+$baseBlueDarken1:#004766;
+$baseBlueDarken2:#003146;
+
+$baseVSBlack: #303030;
+
+@mixin setSize($width, $height){
+    width:$width;
+    height:$height;
+}
+
+@mixin setPosition($position, $left, $top, $right, $bottom){
+    position: $position;
+    @if $left != null{left: $left;}
+    @if $top != null{top: $top;}
+    @if $right != null {right: $right;}    
+    @if $bottom != null {bottom: $bottom;}
+}
+
+@mixin setSizeAndPosition($width, $height, $position, $left, $top, $right, $bottom, $margin-left){
+    @include setSize($width, $height);
+    @include setPosition($position, $left, $top, $right, $bottom);
+    margin-left: $margin-left;
+}
+
+
+
+@font-face{
+    font-family: spaceFont;
+    src: url(../fonts/orbitron-medium.otf);
+}
+body{
+        background: linear-gradient(#303030, #444444 45%,  #444444 55%, #303030 );
+
+    height:100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; //makes it so that when you scroll, background will not
+}
+
+$curtain_size:400px;
+#bottom-left-curtain{
+
+
+    @include setSizeAndPosition($curtain_size, $curtain_size, absolute, -299px, 0, null, null,null);
+    background: linear-gradient(45deg,  $baseBlue, $baseBlue 90%,  $baseBlueLighten1);
+    border-bottom:1px solid $baseBlueLighten1;
+    border-left:1px solid $baseBlueLighten1;
+
+    &::after{
+        content:"";
+        display:block;
+        @include setSizeAndPosition($curtain_size, $curtain_size, absolute, $curtain_size, 0, null, null, null);
+        margin-left:-1px;
+        background: linear-gradient(45deg,  $baseBlue, $baseBlue 40%,  $baseBlueLighten1 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
+        border-bottom:1px solid #196a8e;
+    }
+}
+
+#top-right-curtain{
+
+    @include setSizeAndPosition($curtain_size, $curtain_size, absolute, null, 0, 299px, null,null);
+    background: linear-gradient(45deg,  #196a8e, #005981 10%, #005981);
+    border-bottom:1px solid #196a8e;
+    border-right:1px solid #196a8e;
+
+    &::before{
+        content:"";
+        display:block;
+        @include setSizeAndPosition($curtain_size, $curtain_size, absolute, (-1 * $curtain_size), 0, null, null,null);
+        margin-left:1px;
+        //left:-1 * @curtain_size;
+        background: linear-gradient(45deg, rgba(0,0,0,0), rgba(0,0,0,0) 50%, #196a8e 50%,  #005981 60%, #005981);
+        border-bottom:1px solid #196a8e;
+    }
+}
+
+
+#zano-container{
+
+    @include setSizeAndPosition(600px, 400px, absolute, 50%, 200px, null, null, -300px);
+    background: linear-gradient($baseBlue, $baseBlueDarken1);
+    border:1px solid $baseBlueLighten1;
+    box-shadow:10px 10px 10px $baseVSBlack;
+    overflow:hidden;
+}

@@ -74,6 +74,12 @@
     <Content Include="css\home.min.css">
       <DependentUpon>home.css</DependentUpon>
     </Content>
+    <Content Include="css\homeS.css">
+      <DependentUpon>homeS.scss</DependentUpon>
+    </Content>
+    <Content Include="css\homeS.min.css">
+      <DependentUpon>homeS.css</DependentUpon>
+    </Content>
     <Content Include="css\site.css">
       <DependentUpon>site.less</DependentUpon>
     </Content>
@@ -126,6 +132,10 @@
     <Content Include="fonts\orbitron-bold.otf" />
     <Content Include="fonts\orbitron-light.otf" />
     <Content Include="fonts\orbitron-medium.otf" />
+    <Content Include="css\homeS.scss" />
+    <Content Include="css\homeS.css.map">
+      <DependentUpon>homeS.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\zano.pubxml" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />
