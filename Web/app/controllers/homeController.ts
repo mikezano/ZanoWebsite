@@ -10,6 +10,11 @@ module Web.Client {
             this.message = "Message from Home";
             //var show = Impressive(document, window);
         }
+
+        public GoHome($event: any): void {
+            $('#bottom-left-curtain').addClass('close-left-curtain');
+            $('#top-right-curtain').addClass('close-right-curtain');
+        }
     }
 }
 app.registerController('Web.Client.HomeController', Web.Client.HomeController);

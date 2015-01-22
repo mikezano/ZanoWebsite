@@ -1,8 +1,5 @@
-﻿@font-face {
-  font-family: spaceFont;
-  src: url(../fonts/orbitron-medium.otf); }
-
-body {
+﻿body {
+  font-family: 'Orbitron', sans-serif;
   background: linear-gradient(#303030, #444444 45%, #444444 55%, #303030);
   height: 100%;
   background-repeat: no-repeat;
@@ -47,6 +44,24 @@ body {
     top: 0;
     
     background: linear-gradient(45deg, #005a81, #005a81 40%, #006f9f 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)); }
+  #bottom-left-curtain.close-left-curtain {
+    -moz-animation: bottom-left-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: bottom-left-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: bottom-left-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: bottom-left-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*@at-root{
+        @keyframes bottom-left-curtain-close{
+            @content;
+        }
+
+        @-webkit-keyframes bottom-left-curtain-close{
+            @content;
+        }
+    }*/ }
 
 @keyframes bottom-left-curtain {
   100% {
@@ -55,6 +70,20 @@ body {
 @-webkit-keyframes bottom-left-curtain {
   100% {
     left: -500px; } }
+
+@keyframes bottom-left-curtain-close {
+  0% {
+    left: -500px; }
+
+  100% {
+    left: -300px; } }
+
+@-webkit-keyframes bottom-left-curtain-close {
+  0% {
+    left: -500px; }
+
+  100% {
+    left: -300px; } }
 
 #top-right-curtain {
   width: 400px;
@@ -95,6 +124,24 @@ body {
     right: 400px;
     
     background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #006f9f 50%, #005a81 60%, #005a81); }
+  #top-right-curtain.close-right-curtain {
+    -moz-animation: top-right-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: top-right-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: top-right-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: top-right-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*@at-root{
+        @keyframes top-right-curtain-close{
+            @content;
+        }
+
+        @-webkit-keyframes top-right-curtain-close{
+            @content;
+        }
+    }*/ }
 
 @keyframes top-right-curtain {
   100% {
@@ -103,6 +150,20 @@ body {
 @-webkit-keyframes top-right-curtain {
   100% {
     right: -500px; } }
+
+@keyframes top-right-curtain-close {
+  0% {
+    right: -500px; }
+
+  100% {
+    right: -300px; } }
+
+@-webkit-keyframes top-right-curtain-close {
+  0% {
+    right: -500px; }
+
+  100% {
+    right: -300px; } }
 
 #bottom-left-triangle {
   width: 300px;
@@ -248,5 +309,23 @@ body {
 
   100% {
     height: 400px; } }
+
+#menu {
+  color: white;
+  position: absolute;
+  top: 200px; }
+  #menu ul {
+    list-style-type: none;
+    padding-left: 20px; }
+  #menu .item1, #menu .item2, #menu .item3, #menu .item4 {
+    margin-bottom: 20px; }
+  #menu .item1 {
+    padding-left: 0px; }
+  #menu .item2 {
+    padding-left: 30px; }
+  #menu .item3 {
+    padding-left: 60px; }
+  #menu .item4 {
+    padding-left: 90px; }
 
 /*# sourceMappingURL=homeS.css.map */

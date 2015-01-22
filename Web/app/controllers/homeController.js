@@ -6,6 +6,10 @@
                 this.message = "Message from Home";
                 //var show = Impressive(document, window);
             }
+            HomeController.prototype.GoHome = function ($event) {
+                $('#bottom-left-curtain').addClass('close-left-curtain');
+                $('#top-right-curtain').addClass('close-right-curtain');
+            };
             return HomeController;
         })();
         Client.HomeController = HomeController;

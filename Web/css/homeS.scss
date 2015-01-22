@@ -18,6 +18,7 @@ $triangle-animation-time:500ms;
 $quick-ease-in:cubic-bezier(.19,.92,.23,1);
 
 
+
 @mixin setSize($width, $height){
     width:$width;
     height:$height;
@@ -113,13 +114,10 @@ $quick-ease-in:cubic-bezier(.19,.92,.23,1);
 
 
 
-@font-face{
-    font-family: spaceFont;
-    src: url(../fonts/orbitron-medium.otf);
-}
-body{
-        background: linear-gradient(#303030, #444444 45%,  #444444 55%, #303030 );
 
+body{
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(#303030, #444444 45%,  #444444 55%, #303030 );
     height:100%;
     background-repeat: no-repeat;
     background-attachment: fixed; //makes it so that when you scroll, background will not
@@ -137,9 +135,19 @@ $curtain_size:400px;
         background: linear-gradient(45deg,  $colorBlue, $colorBlue 40%,  $colorBlueLighten1 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
     }
     @include customAnimationFrames(bottom-left-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
+
+    &.close-left-curtain{
+        @include customAnimationFrames(bottom-left-curtain-close, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
+    }
 }
+
 @include customKeyFrames(bottom-left-curtain){
     100%{left:-500px;}
+}
+
+@include customKeyFrames(bottom-left-curtain-close){
+    0%{left:-500px;}
+    100%{left:-300px;}
 }
 
 #top-right-curtain{
@@ -154,9 +162,18 @@ $curtain_size:400px;
     }
 
     @include customAnimationFrames(top-right-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
+
+    &.close-right-curtain{
+        @include customAnimationFrames(top-right-curtain-close, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
+    }
 }
 @include customKeyFrames(top-right-curtain){
     100%{right:-500px;}
+}
+
+@include customKeyFrames(top-right-curtain-close){
+    0%{right:-500px;}
+    100%{right:-300px;}
 }
 
 
@@ -223,4 +240,26 @@ $triangleSize:300px;
         height:400px;
         //top:200px;
     }
+}
+
+#menu{
+
+    color:white;
+    position:absolute;
+    top:200px;
+    $indent: 30px;
+
+    & ul{
+        list-style-type:none;
+        padding-left:20px;
+    }
+
+    .item1, .item2, .item3, .item4{
+        margin-bottom:20px;
+    }
+
+    .item1{padding-left:$indent * 0;}
+    .item2{padding-left:$indent * 1;}
+    .item3{padding-left:$indent * 2;}
+    .item4{padding-left:$indent * 3;}
 }
