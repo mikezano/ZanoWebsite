@@ -11,10 +11,12 @@ $colorBlueDarken2:#003146;
 
 $baseVSBlack: #303030;
 
-$zano-container-animation-time:2s;
+$zano-container-animation-time:1000ms;
 $triangle-animation-time:500ms;
 
-$quick-ease-in:cubic-bezier(0,1,.71,1);
+//$quick-ease-in:cubic-bezier(0,1,.71,1);
+$quick-ease-in:cubic-bezier(.19,.92,.23,1);
+
 
 @mixin setSize($width, $height){
     width:$width;
@@ -134,7 +136,7 @@ $curtain_size:400px;
         @include setSizeAndPosition($curtain_size, $curtain_size, absolute, $curtain_size, 0, null, null, null);
         background: linear-gradient(45deg,  $colorBlue, $colorBlue 40%,  $colorBlueLighten1 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
     }
-   // @include customAnimationFrames(bottom-left-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
+    @include customAnimationFrames(bottom-left-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
 }
 @include customKeyFrames(bottom-left-curtain){
     100%{left:-500px;}
@@ -151,7 +153,7 @@ $curtain_size:400px;
         background: linear-gradient(45deg, rgba(0,0,0,0), rgba(0,0,0,0) 50%, $colorBlueLighten1 50%,  $colorBlue 60%, $colorBlue);
     }
 
-    //@include customAnimationFrames(top-right-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
+    @include customAnimationFrames(top-right-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
 }
 @include customKeyFrames(top-right-curtain){
     100%{right:-500px;}
