@@ -27,6 +27,14 @@ body {
     
     background: linear-gradient(45deg, #005a81, #005a81 40%, #006f9f 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)); }
 
+@keyframes bottom-left-curtain {
+  100% {
+    left: -500px; } }
+
+@-webkit-keyframes bottom-left-curtain {
+  100% {
+    left: -500px; } }
+
 #top-right-curtain {
   width: 400px;
   height: 400px;
@@ -46,6 +54,94 @@ body {
     
     background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #006f9f 50%, #005a81 60%, #005a81); }
 
+@keyframes top-right-curtain {
+  100% {
+    right: -500px; } }
+
+@-webkit-keyframes top-right-curtain {
+  100% {
+    right: -500px; } }
+
+#bottom-left-triangle {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: -300px;
+  bottom: -300px;
+  
+  background: linear-gradient(45deg, #303030, #003146 20%, #004766 49%, #006f9f 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0));
+  -moz-animation: bottom-left-triangle 200ms cubic-bezier(0, 1, 0.71, 1) 1;
+  -o-animation: bottom-left-triangle 200ms cubic-bezier(0, 1, 0.71, 1) 1;
+  -webkit-animation: bottom-left-triangle 200ms cubic-bezier(0, 1, 0.71, 1) 1;
+  animation: bottom-left-triangle 200ms cubic-bezier(0, 1, 0.71, 1) 1;
+  -moz-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  /*@at-root{
+        @keyframes bottom-left-triangle{
+            @content;
+        }
+
+        @-webkit-keyframes bottom-left-triangle{
+            @content;
+        }
+    }*/ }
+
+@keyframes bottom-left-triangle {
+  100% {
+    left: 0;
+    bottom: 0; } }
+
+@-webkit-keyframes bottom-left-triangle {
+  100% {
+    left: 0;
+    bottom: 0; } }
+
+#top-right-triangle {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: -300px;
+  right: -300px;
+  
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #006f9f 50%, #004766 51%, #003146 80%, #303030);
+  -moz-animation: top-right-triangle 200ms cubic-bezier(0, 1, 0.71, 1) 1;
+  -o-animation: top-right-triangle 200ms cubic-bezier(0, 1, 0.71, 1) 1;
+  -webkit-animation: top-right-triangle 200ms cubic-bezier(0, 1, 0.71, 1) 1;
+  animation: top-right-triangle 200ms cubic-bezier(0, 1, 0.71, 1) 1;
+  -moz-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  /*@at-root{
+        @keyframes top-right-triangle{
+            @content;
+        }
+
+        @-webkit-keyframes top-right-triangle{
+            @content;
+        }
+    }*/ }
+
+@keyframes top-right-triangle {
+  100% {
+    top: 0;
+    right: 0; } }
+
+@-webkit-keyframes top-right-triangle {
+  100% {
+    top: 0;
+    right: 0; } }
+
 #zano-container {
   width: 600px;
   height: 400px;
@@ -57,29 +153,58 @@ body {
   border: 1px solid #006f9f;
   box-shadow: 10px 10px 10px #303030;
   overflow: hidden;
-  animation: zanoContainer 4s ease-in-out 1;
-  -moz-animation: zanoContainer 4s ease-in-out 1;
-  -o-animation: zanoContainer 4s ease-in-out 1;
-  -webkit-animation: zanoContainer 4s ease-in-out 1;
-  @at-root {
-    @keyframes zanoContainer { }
+  -moz-animation: zanoContainer 2s cubic-bezier(0, 1, 0.71, 1) 1;
+  -o-animation: zanoContainer 2s cubic-bezier(0, 1, 0.71, 1) 1;
+  -webkit-animation: zanoContainer 2s cubic-bezier(0, 1, 0.71, 1) 1;
+  animation: zanoContainer 2s cubic-bezier(0, 1, 0.71, 1) 1;
+  /*@at-root{
+        @keyframes zanoContainer{
+            @content;
+        }
 
-    @-webkit-keyframes zanoContainer { }
- }
- }
+        @-webkit-keyframes zanoContainer{
+            @content;
+        }
+    }*/ }
 
 @keyframes zanoContainer {
   0% {
+    width: 400px;
+    margin-left: -200px;
+    height: 10px;
+    top: 400px;
     opacity: 0; }
 
+  10% {
+    opacity: 1; }
+
   50% {
-    opacity: 1; } }
+    width: 600px;
+    margin-left: -300px;
+    height: 10px;
+    top: 400px; }
+
+  100% {
+    height: 400px; } }
 
 @-webkit-keyframes zanoContainer {
   0% {
+    width: 400px;
+    margin-left: -200px;
+    height: 10px;
+    top: 400px;
     opacity: 0; }
 
+  10% {
+    opacity: 1; }
+
   50% {
-    opacity: 1; } }
+    width: 600px;
+    margin-left: -300px;
+    height: 10px;
+    top: 400px; }
+
+  100% {
+    height: 400px; } }
 
 /*# sourceMappingURL=homeS.css.map */
