@@ -61,9 +61,11 @@ body {
   -moz-animation: zanoContainer 4s ease-in-out 1;
   -o-animation: zanoContainer 4s ease-in-out 1;
   -webkit-animation: zanoContainer 4s ease-in-out 1;
-  @keyframes zanoContainer { }
+  @at-root {
+    @keyframes zanoContainer { }
 
-  @-webkit-keyframes zanoContainer { }
+    @-webkit-keyframes zanoContainer { }
+ }
  }
 
 @keyframes zanoContainer {

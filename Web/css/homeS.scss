@@ -68,14 +68,15 @@ $baseVSBlack: #303030;
     -o-animation: $name $duration $timing $repeat;
     -webkit-animation: $name $duration $timing $repeat;
    
+//http://stackoverflow.com/questions/21270492/how-to-make-a-sass-mixin-declare-a-non-nested-selector-on-base-level
+    @at-root{
+        @keyframes #{$name}{
+            @content;
+        }
 
-
-    @keyframes #{$name}{
-        @content;
-    }
-
-    @-webkit-keyframes #{$name}{
-        @content;
+        @-webkit-keyframes #{$name}{
+            @content;
+        }
     }
 }
 
@@ -137,6 +138,7 @@ $curtain_size:400px;
     overflow:hidden;
 
     @include customAnimationFrames(zanoContainer, 4s, ease-in-out, 1);
+
 }
 @include customKeyFrames(zanoContainer){
         0%{opacity:0;}
