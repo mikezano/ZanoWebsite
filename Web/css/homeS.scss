@@ -1,12 +1,12 @@
 ﻿
-$width: 600px;
-$height:400px;
+$mainContainerWidth: 600px;
+$mainContainerHeight:400px;
 
-$baseBlueLighten2:#00a0e5;
-$baseBlueLighten1:#006f9f;
-$baseBlue: #005a81;
-$baseBlueDarken1:#004766;
-$baseBlueDarken2:#003146;
+$colorBlueLighten2:#00a0e5;
+$colorBlueLighten1:#006f9f;
+$colorBlue: #005a81;
+$colorBlueDarken1:#004766;
+$colorBlueDarken2:#003146;
 
 $baseVSBlack: #303030;
 
@@ -29,6 +29,66 @@ $baseVSBlack: #303030;
     margin-left: $margin-left;
 }
 
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+
+@mixin customAnimationFrames($name, $duration, $timing, $repeat) {
+     animation: $name $duration $timing $repeat;
+    -moz-animation: $name $duration $timing $repeat;
+    -o-animation: $name $duration $timing $repeat;
+    -webkit-animation: $name $duration $timing $repeat;
+   
+
+
+    @keyframes #{$name}{
+        @content;
+    }
+
+    @-webkit-keyframes #{$name}{
+        @content;
+    }
+}
+
+@mixin customKeyFrames($name){
+    @keyframes #{$name}{
+        @content;
+    }
+
+    @-webkit-keyframes #{$name}{
+        @content;
+    }
+}
+
 
 
 @font-face{
@@ -46,46 +106,39 @@ body{
 $curtain_size:400px;
 #bottom-left-curtain{
 
-
-    @include setSizeAndPosition($curtain_size, $curtain_size, absolute, -299px, 0, null, null,null);
-    background: linear-gradient(45deg,  $baseBlue, $baseBlue 90%,  $baseBlueLighten1);
-    border-bottom:1px solid $baseBlueLighten1;
-    border-left:1px solid $baseBlueLighten1;
-
+    @include setSizeAndPosition($curtain_size, $curtain_size, absolute, -300px, 0, null, null,null);
+    background: linear-gradient(45deg,  $colorBlue, $colorBlue 90%,  $colorBlueLighten1);
     &::after{
         content:"";
         display:block;
         @include setSizeAndPosition($curtain_size, $curtain_size, absolute, $curtain_size, 0, null, null, null);
-        margin-left:-1px;
-        background: linear-gradient(45deg,  $baseBlue, $baseBlue 40%,  $baseBlueLighten1 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
-        border-bottom:1px solid #196a8e;
+        background: linear-gradient(45deg,  $colorBlue, $colorBlue 40%,  $colorBlueLighten1 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
     }
 }
 
 #top-right-curtain{
 
-    @include setSizeAndPosition($curtain_size, $curtain_size, absolute, null, 0, 299px, null,null);
-    background: linear-gradient(45deg,  #196a8e, #005981 10%, #005981);
-    border-bottom:1px solid #196a8e;
-    border-right:1px solid #196a8e;
-
+    @include setSizeAndPosition($curtain_size, $curtain_size, absolute, null, 0, -300px, null,null);
+    background: linear-gradient(45deg,  $colorBlueLighten1, $colorBlue 10%, $colorBlue);
     &::before{
         content:"";
         display:block;
-        @include setSizeAndPosition($curtain_size, $curtain_size, absolute, (-1 * $curtain_size), 0, null, null,null);
-        margin-left:1px;
-        //left:-1 * @curtain_size;
-        background: linear-gradient(45deg, rgba(0,0,0,0), rgba(0,0,0,0) 50%, #196a8e 50%,  #005981 60%, #005981);
-        border-bottom:1px solid #196a8e;
+        @include setSizeAndPosition($curtain_size, $curtain_size, absolute, null, 0, $curtain_size, null,null);
+        background: linear-gradient(45deg, rgba(0,0,0,0), rgba(0,0,0,0) 50%, $colorBlueLighten1 50%,  $colorBlue 60%, $colorBlue);
     }
 }
 
-
 #zano-container{
 
-    @include setSizeAndPosition(600px, 400px, absolute, 50%, 200px, null, null, -300px);
-    background: linear-gradient($baseBlue, $baseBlueDarken1);
-    border:1px solid $baseBlueLighten1;
+    @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 200px, null, null, -1 * $mainContainerWidth/2);
+    background: linear-gradient($colorBlue, $colorBlueDarken1);
+    border:1px solid $colorBlueLighten1;
     box-shadow:10px 10px 10px $baseVSBlack;
     overflow:hidden;
+
+    @include customAnimationFrames(zanoContainer, 4s, ease-in-out, 1);
+}
+@include customKeyFrames(zanoContainer){
+        0%{opacity:0;}
+        50%{opacity:1;}
 }
