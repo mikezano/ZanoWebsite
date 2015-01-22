@@ -2,14 +2,20 @@
 (function (Web) {
     (function (Client) {
         var HomeController = (function () {
-            function HomeController() {
+            function HomeController($timeout) {
+                this.$timeout = $timeout;
                 this.message = "Message from Home";
                 //var show = Impressive(document, window);
             }
             HomeController.prototype.GoHome = function ($event) {
                 $('#bottom-left-curtain').addClass('close-left-curtain');
                 $('#top-right-curtain').addClass('close-right-curtain');
+                this.$timeout(function () {
+                    $('#bottom-left-curtain').removeClass('close-left-curtain');
+                    $('#top-right-curtain').removeClass('close-right-curtain');
+                }, 500);
             };
+            HomeController.$inject = ['$timeout'];
             return HomeController;
         })();
         Client.HomeController = HomeController;

@@ -5,8 +5,8 @@ module Web.Client {
 
         private message: string;
 
-
-        constructor() {
+        public static $inject = ['$timeout'];
+        constructor(private $timeout: ng.ITimeoutService) {
             this.message = "Message from Home";
             //var show = Impressive(document, window);
         }
@@ -14,6 +14,10 @@ module Web.Client {
         public GoHome($event: any): void {
             $('#bottom-left-curtain').addClass('close-left-curtain');
             $('#top-right-curtain').addClass('close-right-curtain');
+            this.$timeout(() => {
+                $('#bottom-left-curtain').removeClass('close-left-curtain');
+                $('#top-right-curtain').removeClass('close-right-curtain');
+            }, 500);
         }
     }
 }
