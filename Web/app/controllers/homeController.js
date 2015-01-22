@@ -5,12 +5,31 @@
             function HomeController($timeout) {
                 this.$timeout = $timeout;
                 this.message = "Message from Home";
+
                 //var show = Impressive(document, window);
+                this.currentPage = "views/resume.html";
             }
-            HomeController.prototype.GoHome = function ($event) {
+            HomeController.prototype.changePage = function ($event) {
+                var _this = this;
                 $('#bottom-left-curtain').addClass('close-left-curtain');
                 $('#top-right-curtain').addClass('close-right-curtain');
                 this.$timeout(function () {
+                    var nextPage = $($event.target).text();
+                    switch (nextPage) {
+                        case 'HOME':
+                            _this.currentPage = "views/intro.html";
+                            break;
+                        case 'MUSIC':
+                            _this.currentPage = "views/music.html";
+                            break;
+                        case 'RESUME':
+                            _this.currentPage = "views/resume.html";
+                            break;
+                        case 'PROJECTS':
+                            _this.currentPage = "views/projects.html";
+                            break;
+                    }
+
                     $('#bottom-left-curtain').removeClass('close-left-curtain');
                     $('#top-right-curtain').removeClass('close-right-curtain');
                 }, 500);

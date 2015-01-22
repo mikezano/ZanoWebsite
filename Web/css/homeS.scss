@@ -126,7 +126,17 @@ body{
 $curtain_size:400px;
 #bottom-left-curtain{
 
-    @include setSizeAndPosition($curtain_size, $curtain_size, absolute, -300px, 0, null, null,null);
+    @include setSizeAndPosition(
+        $curtain_size, 
+        $curtain_size, 
+        absolute, 
+        -300px, 
+        0, 
+        null, 
+        null,
+        null
+    );
+
     background: linear-gradient(45deg,  $colorBlue, $colorBlue 90%,  $colorBlueLighten1);
     &::after{
         content:"";
@@ -242,24 +252,62 @@ $triangleSize:300px;
     }
 }
 
-#menu{
-
-    color:white;
-    position:absolute;
-    top:200px;
+#menu {
+    opacity:0;
+    color: white;
+    position: absolute;
+    top: 200px;
     $indent: 30px;
 
-    & ul{
-        list-style-type:none;
-        padding-left:20px;
+    @include customAnimationFrames(menu-items-intro, 1s, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
+
+    & ul {
+        list-style-type: none;
+        padding-left: 20px;
     }
 
-    .item1, .item2, .item3, .item4{
-        margin-bottom:20px;
+    .item1, .item2, .item3, .item4 {
+        margin-bottom: 20px;
+        -moz-transition: transform 500ms, color 500ms;
+        -o-transition: transform 500ms, color 500ms;
+        -webkit-transition: transform 500ms, color 500ms;
+        transition: transform 500ms, color 500ms;
+        position: relative;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+
+        &:hover {
+            cursor: pointer;
+            color: whitesmoke;
+            -moz-transform: translateX(-2px);
+            -ms-transform: translateX(-2px);
+            -o-transform: translateX(-2px);
+            -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+            color:$colorBlueLighten2;
+        }
     }
 
-    .item1{padding-left:$indent * 0;}
-    .item2{padding-left:$indent * 1;}
-    .item3{padding-left:$indent * 2;}
-    .item4{padding-left:$indent * 3;}
+    .item1 {
+        padding-left: $indent * 0;
+    }
+
+    .item2 {
+        padding-left: $indent * 1;
+    }
+
+    .item3 {
+        padding-left: $indent * 2;
+    }
+
+    .item4 {
+        padding-left: $indent * 3;
+    }
+}
+
+@include customKeyFrames(menu-items-intro){
+    100%{
+        opacity:1;
+    }
 }
