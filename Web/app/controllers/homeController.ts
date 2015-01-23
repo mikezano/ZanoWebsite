@@ -1,5 +1,6 @@
 ﻿//http://davidwalsh.name/css-animation-callback
-http://brentvatne.ca/animation-obsession-and-ng-animate-1-3/
+//http://brentvatne.ca/animation-obsession-and-ng-animate-1-3/
+//https://www.youtube.com/watch?v=3hktBbxFxSM#t=69
 module Web.Client {
 
     export class HomeController {

@@ -1,6 +1,8 @@
 ﻿var Web;
 (function (Web) {
     //http://davidwalsh.name/css-animation-callback
+    //http://brentvatne.ca/animation-obsession-and-ng-animate-1-3/
+    //https://www.youtube.com/watch?v=3hktBbxFxSM#t=69
     (function (Client) {
         var HomeController = (function () {
             function HomeController($timeout, $q, $animate) {
