@@ -1,5 +1,6 @@
 ﻿var Web;
 (function (Web) {
+    //http://davidwalsh.name/css-animation-callback
     (function (Client) {
         var HomeController = (function () {
             function HomeController($timeout) {
@@ -10,29 +11,30 @@
                 this.currentPage = "views/resume.html";
             }
             HomeController.prototype.changePage = function ($event) {
-                var _this = this;
                 $('#bottom-left-curtain').addClass('close-left-curtain');
-                $('#top-right-curtain').addClass('close-right-curtain');
-                this.$timeout(function () {
-                    var nextPage = $($event.target).text();
-                    switch (nextPage) {
-                        case 'HOME':
-                            _this.currentPage = "views/intro.html";
-                            break;
-                        case 'MUSIC':
-                            _this.currentPage = "views/music.html";
-                            break;
-                        case 'RESUME':
-                            _this.currentPage = "views/resume.html";
-                            break;
-                        case 'PROJECTS':
-                            _this.currentPage = "views/projects.html";
-                            break;
-                    }
-
+                $('#top-right-curtain').addClass('close-right-curtain').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
+                    //                    var nextPage = $($event.target).text();
+                    //                    switch (nextPage) {
+                    //                        case 'HOME':
+                    //                            this.currentPage = "views/intro.html";
+                    //                            break;
+                    //                        case 'MUSIC':
+                    //                            this.currentPage = "views/music.html";
+                    //                            break;
+                    //                        case 'RESUME':
+                    //                            this.currentPage = "views/resume.html";
+                    //                            break;
+                    //                        case 'PROJECTS':
+                    //                            this.currentPage = "views/projects.html";
+                    //                            break;
+                    //                    }
                     $('#bottom-left-curtain').removeClass('close-left-curtain');
                     $('#top-right-curtain').removeClass('close-right-curtain');
-                }, 500);
+                });
+                //            this.$timeout(() => {
+                //
+                //
+                //            }, 200);
             };
             HomeController.$inject = ['$timeout'];
             return HomeController;

@@ -1,4 +1,4 @@
-﻿
+﻿//http://davidwalsh.name/css-animation-callback
 module Web.Client {
 
     export class HomeController {
@@ -16,28 +16,32 @@ module Web.Client {
         public changePage($event): void {
 
             $('#bottom-left-curtain').addClass('close-left-curtain');
-            $('#top-right-curtain').addClass('close-right-curtain');
-            this.$timeout(() => {
+            $('#top-right-curtain').addClass('close-right-curtain')
+                .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', () => {
+       
+//                    var nextPage = $($event.target).text();
+//                    switch (nextPage) {
+//                        case 'HOME':
+//                            this.currentPage = "views/intro.html";
+//                            break;
+//                        case 'MUSIC':
+//                            this.currentPage = "views/music.html";
+//                            break;
+//                        case 'RESUME':
+//                            this.currentPage = "views/resume.html";
+//                            break;
+//                        case 'PROJECTS':
+//                            this.currentPage = "views/projects.html";
+//                            break;
+//                    }
 
-                var nextPage = $($event.target).text();
-                switch (nextPage) {
-                    case 'HOME':
-                        this.currentPage = "views/intro.html";
-                        break;
-                    case 'MUSIC':
-                        this.currentPage = "views/music.html";
-                        break;
-                    case 'RESUME':
-                        this.currentPage = "views/resume.html";
-                        break;
-                    case 'PROJECTS':
-                        this.currentPage = "views/projects.html";
-                        break;
-                }
-
-                $('#bottom-left-curtain').removeClass('close-left-curtain');
-                $('#top-right-curtain').removeClass('close-right-curtain');
-            }, 500);
+                    $('#bottom-left-curtain').removeClass('close-left-curtain');
+                    $('#top-right-curtain').removeClass('close-right-curtain');         
+            });
+//            this.$timeout(() => {
+//
+//
+//            }, 200);
         }
     }
 }
