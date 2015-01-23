@@ -3,23 +3,27 @@
     //http://davidwalsh.name/css-animation-callback
     (function (Client) {
         var HomeController = (function () {
-            function HomeController($timeout, $q) {
-                var _this = this;
+            function HomeController($timeout, $q, $animate) {
                 this.$timeout = $timeout;
+                this.$animate = $animate;
                 this.message = "Message from Home";
 
                 //var show = Impressive(document, window);
                 this.currentPage = "views/resume.html";
 
-                this.animationTracker($("#zano-container"), 'animate-in', true, function () {
-                    console.log("did the intro");
-                    _this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, function () {
-                        console.log("did the triangles");
-                        _this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-in', true, function () {
-                            console.log("curtains open");
-                        });
-                    });
+                //this.el = $("#zano-container")[0];
+                this.$animate.animate($("#zano-container"), null, null, "animate-in").then(function () {
+                    console.log('que coza');
                 });
+                //            this.animationTracker($("#zano-container"), 'animate-in', true,() => {
+                //                console.log("did the intro");
+                //                this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, () => {
+                //                    console.log("did the triangles");
+                //                    this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-in', true, () => {
+                //                        console.log("curtains open");
+                //                    });
+                //                });
+                //            });
             }
             HomeController.prototype.animationTracker = function (element, animationClass, keepAnimationClass, onAnimationEnd) {
                 if (typeof keepAnimationClass === "undefined") { keepAnimationClass = true; }
@@ -62,7 +66,7 @@
                 //
                 //            }, 200);
             };
-            HomeController.$inject = ['$timeout', '$q'];
+            HomeController.$inject = ['$timeout', '$q', '$animate'];
             return HomeController;
         })();
         Client.HomeController = HomeController;

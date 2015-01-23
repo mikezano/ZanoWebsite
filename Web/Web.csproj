@@ -161,6 +161,10 @@
     <Content Include="views\home.html" />
     <Content Include="views\impress-zano.html" />
     <Content Include="views\impress.html" />
+    <Content Include="views\intro.html" />
+    <Content Include="views\music.html" />
+    <Content Include="views\projects.html" />
+    <Content Include="views\resume.html" />
     <Content Include="views\state1.html" />
     <Content Include="views\state2.html" />
     <Content Include="Web.config" />

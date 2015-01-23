@@ -1,26 +1,37 @@
 ﻿//http://davidwalsh.name/css-animation-callback
+http://brentvatne.ca/animation-obsession-and-ng-animate-1-3/
 module Web.Client {
 
     export class HomeController {
 
         private message: string;
-        private currentPage:string;
+        private currentPage: string;
+        private el:Element;
 
-        public static $inject = ['$timeout', '$q'];
-        constructor(private $timeout: ng.ITimeoutService, $q:ng.IPromise) {
+        public static $inject = ['$timeout', '$q', '$animate'];
+        constructor(private $timeout: ng.ITimeoutService, $q:any, private $animate) {
             this.message = "Message from Home";
             //var show = Impressive(document, window);
             this.currentPage = "views/resume.html";
 
-            this.animationTracker($("#zano-container"), 'animate-in', true,() => {
-                console.log("did the intro");
-                this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, () => {
-                    console.log("did the triangles");
-                    this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-in', true, () => {
-                        console.log("curtains open");
-                    });
-                });
+
+            //this.el = $("#zano-container")[0];
+            this.$animate.animate($("#zano-container"), null, null, "animate-in").then(() => {
+                console.log('que coza');
             });
+
+
+
+
+//            this.animationTracker($("#zano-container"), 'animate-in', true,() => {
+//                console.log("did the intro");
+//                this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, () => {
+//                    console.log("did the triangles");
+//                    this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-in', true, () => {
+//                        console.log("curtains open");
+//                    });
+//                });
+//            });
         }
 
         public animationTracker(element: JQuery, animationClass: string, keepAnimationClass: boolean = true, onAnimationEnd: () => void = null): void {
