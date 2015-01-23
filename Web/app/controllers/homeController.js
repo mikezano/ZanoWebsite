@@ -3,16 +3,42 @@
     //http://davidwalsh.name/css-animation-callback
     (function (Client) {
         var HomeController = (function () {
-            function HomeController($timeout) {
+            function HomeController($timeout, $q) {
+                var _this = this;
                 this.$timeout = $timeout;
                 this.message = "Message from Home";
 
                 //var show = Impressive(document, window);
                 this.currentPage = "views/resume.html";
+
+                this.animationTracker($("#zano-container"), 'animate-in', true, function () {
+                    console.log("did the intro");
+                    _this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, function () {
+                        console.log("did the triangles");
+                        _this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-in', true, function () {
+                            console.log("curtains open");
+                        });
+                    });
+                });
             }
+            HomeController.prototype.animationTracker = function (element, animationClass, keepAnimationClass, onAnimationEnd) {
+                if (typeof keepAnimationClass === "undefined") { keepAnimationClass = true; }
+                if (typeof onAnimationEnd === "undefined") { onAnimationEnd = null; }
+                //Need to setup promise to that call only called once
+                element.addClass(animationClass).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
+                    if (!keepAnimationClass)
+                        element.removeClass(animationClass);
+
+                    if (onAnimationEnd)
+                        onAnimationEnd();
+                });
+            };
+
             HomeController.prototype.changePage = function ($event) {
                 $('#bottom-left-curtain').addClass('close-left-curtain');
                 $('#top-right-curtain').addClass('close-right-curtain').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
+                    console.log("done");
+
                     //                    var nextPage = $($event.target).text();
                     //                    switch (nextPage) {
                     //                        case 'HOME':
@@ -36,7 +62,7 @@
                 //
                 //            }, 200);
             };
-            HomeController.$inject = ['$timeout'];
+            HomeController.$inject = ['$timeout', '$q'];
             return HomeController;
         })();
         Client.HomeController = HomeController;

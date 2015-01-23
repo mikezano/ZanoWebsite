@@ -146,16 +146,20 @@ $curtain_size:400px;
     }
     @include customAnimationFrames(bottom-left-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
 
-    &.close-left-curtain{
-        @include customAnimationFrames(bottom-left-curtain-close, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
+    &.animate-in{
+        @include customAnimationFrames(open-left-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
+    }
+
+    &.animate-out{
+        @include customAnimationFrames(close-left-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
     }
 }
 
-@include customKeyFrames(bottom-left-curtain){
+@include customKeyFrames(open-left-curtain){
     100%{left:-500px;}
 }
 
-@include customKeyFrames(bottom-left-curtain-close){
+@include customKeyFrames(close-left-curtain){
     0%{left:-500px;}
     100%{left:-300px;}
 }
@@ -173,15 +177,19 @@ $curtain_size:400px;
 
     @include customAnimationFrames(top-right-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
 
-    &.close-right-curtain{
-        @include customAnimationFrames(top-right-curtain-close, 4s, $quick-ease-in, 1, null, forwards);
+    &.animate-in{
+        @include customAnimationFrames(open-right-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
+    }
+
+    &.animate-out{
+        @include customAnimationFrames(close-right-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
     }
 }
-@include customKeyFrames(top-right-curtain){
+@include customKeyFrames(open-right-curtain){
     100%{right:-500px;}
 }
 
-@include customKeyFrames(top-right-curtain-close){
+@include customKeyFrames(close-right-curtain){
     0%{right:-500px;}
     100%{right:-300px;}
 }
@@ -192,7 +200,10 @@ $triangleSize:300px;
 #bottom-left-triangle{
     @include setSizeAndPosition($triangleSize, $triangleSize, absolute, -1 *$triangleSize, null, null, -1 *$triangleSize, null);
     background: linear-gradient(45deg, #303030, $colorBlueDarken2 20%,  $colorBlueDarken1 49%, $colorBlueLighten1 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
-    @include customAnimationFrames(bottom-left-triangle, 200ms, $quick-ease-in, 1, $zano-container-animation-time, forwards);
+    
+    &.animate-in{
+        @include customAnimationFrames(bottom-left-triangle, 200ms, $quick-ease-in, 1, null, forwards);
+    }
 }
 
 @include customKeyFrames(bottom-left-triangle){
@@ -205,12 +216,13 @@ $triangleSize:300px;
 #top-right-triangle {
     @include setSizeAndPosition($triangleSize, $triangleSize, absolute, null, -1 *$triangleSize, -1 * $triangleSize, null, null);
     background: linear-gradient(45deg, rgba(0,0,0,0), rgba(0,0,0,0) 50%, $colorBlueLighten1 50%, $colorBlueDarken1 51%, $colorBlueDarken2 80%, #303030);
-    @include customAnimationFrames(top-right-triangle, 200ms, $quick-ease-in, 1, $zano-container-animation-time, forwards);
+   
+    &.animate-in{
+        @include customAnimationFrames(top-right-triangle, 200ms, $quick-ease-in, 1, null, forwards);
+    }   
 }
 
 @include customKeyFrames(top-right-triangle){
-
-
     100%{
         top:0;
         right:0;
@@ -219,36 +231,26 @@ $triangleSize:300px;
 
 #zano-container{
 
-    @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 200px, null, null, -1 * $mainContainerWidth/2);
+    @include setSizeAndPosition(400px, 10px, absolute, 50%, 400px, null, null, -1 * 200px);
+    opacity:0;
     background: linear-gradient($colorBlue, $colorBlueDarken1);
     border:1px solid $colorBlueLighten1;
     box-shadow:10px 10px 10px $baseVSBlack;
     overflow:hidden;
 
-    @include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, null);
+    &.animate-in{
+        @include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, forwards);
+    }
+    //@include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, null);
 }
 
 @include customKeyFrames(zanoContainer){
-
-    0%{
-        width:400px;
-        margin-left:-200px;  
-        height:10px; 
-        top:400px;   
-        opacity:0;      
-    }
-    10%{
-        opacity:1;
-    }
     50%{          
-        width:600px;
-        margin-left:-300px;  
-        height:10px;
-        top:400px;
+        @include setSizeAndPosition($mainContainerWidth, 10px, null, null, 400px, null, null, -1 * 300px);
     }
     100%{
-        height:400px;
-        //top:200px;
+        @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 200px, null, null, -1 * $mainContainerWidth/2);
+        opacity:1;
     }
 }
 

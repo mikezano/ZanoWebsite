@@ -44,41 +44,59 @@
     top: 0;
     
     background: linear-gradient(45deg, #005a81, #005a81 40%, #006f9f 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)); }
-  #bottom-left-curtain.close-left-curtain {
-    -moz-animation: bottom-left-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -o-animation: bottom-left-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -webkit-animation: bottom-left-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    animation: bottom-left-curtain-close 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  #bottom-left-curtain.animate-in {
+    -moz-animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     /*@at-root{
-        @keyframes bottom-left-curtain-close{
+        @keyframes open-left-curtain{
             @content;
         }
 
-        @-webkit-keyframes bottom-left-curtain-close{
+        @-webkit-keyframes open-left-curtain{
+            @content;
+        }
+    }*/ }
+  #bottom-left-curtain.animate-out {
+    -moz-animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*@at-root{
+        @keyframes close-left-curtain{
+            @content;
+        }
+
+        @-webkit-keyframes close-left-curtain{
             @content;
         }
     }*/ }
 
-@keyframes bottom-left-curtain {
+@keyframes open-left-curtain {
   100% {
     left: -500px; } }
 
-@-webkit-keyframes bottom-left-curtain {
+@-webkit-keyframes open-left-curtain {
   100% {
     left: -500px; } }
 
-@keyframes bottom-left-curtain-close {
+@keyframes close-left-curtain {
   0% {
     left: -500px; }
 
   100% {
     left: -300px; } }
 
-@-webkit-keyframes bottom-left-curtain-close {
+@-webkit-keyframes close-left-curtain {
   0% {
     left: -500px; }
 
@@ -124,41 +142,59 @@
     right: 400px;
     
     background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #006f9f 50%, #005a81 60%, #005a81); }
-  #top-right-curtain.close-right-curtain {
-    -moz-animation: top-right-curtain-close 4s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -o-animation: top-right-curtain-close 4s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -webkit-animation: top-right-curtain-close 4s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    animation: top-right-curtain-close 4s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  #top-right-curtain.animate-in {
+    -moz-animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     /*@at-root{
-        @keyframes top-right-curtain-close{
+        @keyframes open-right-curtain{
             @content;
         }
 
-        @-webkit-keyframes top-right-curtain-close{
+        @-webkit-keyframes open-right-curtain{
+            @content;
+        }
+    }*/ }
+  #top-right-curtain.animate-out {
+    -moz-animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*@at-root{
+        @keyframes close-right-curtain{
+            @content;
+        }
+
+        @-webkit-keyframes close-right-curtain{
             @content;
         }
     }*/ }
 
-@keyframes top-right-curtain {
+@keyframes open-right-curtain {
   100% {
     right: -500px; } }
 
-@-webkit-keyframes top-right-curtain {
+@-webkit-keyframes open-right-curtain {
   100% {
     right: -500px; } }
 
-@keyframes top-right-curtain-close {
+@keyframes close-right-curtain {
   0% {
     right: -500px; }
 
   100% {
     right: -300px; } }
 
-@-webkit-keyframes top-right-curtain-close {
+@-webkit-keyframes close-right-curtain {
   0% {
     right: -500px; }
 
@@ -172,20 +208,17 @@
   left: -300px;
   bottom: -300px;
   
-  background: linear-gradient(45deg, #303030, #003146 20%, #004766 49%, #006f9f 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0));
-  -moz-animation: bottom-left-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  -o-animation: bottom-left-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  -webkit-animation: bottom-left-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  animation: bottom-left-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  -moz-animation-delay: 1000ms;
-  -o-animation-delay: 1000ms;
-  -webkit-animation-delay: 1000ms;
-  animation-delay: 1000ms;
-  -moz-animation-fill-mode: forwards;
-  -o-animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  /*@at-root{
+  background: linear-gradient(45deg, #303030, #003146 20%, #004766 49%, #006f9f 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)); }
+  #bottom-left-triangle.animate-in {
+    -moz-animation: bottom-left-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: bottom-left-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: bottom-left-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: bottom-left-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*@at-root{
         @keyframes bottom-left-triangle{
             @content;
         }
@@ -212,20 +245,17 @@
   top: -300px;
   right: -300px;
   
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #006f9f 50%, #004766 51%, #003146 80%, #303030);
-  -moz-animation: top-right-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  -o-animation: top-right-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  -webkit-animation: top-right-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  animation: top-right-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  -moz-animation-delay: 1000ms;
-  -o-animation-delay: 1000ms;
-  -webkit-animation-delay: 1000ms;
-  animation-delay: 1000ms;
-  -moz-animation-fill-mode: forwards;
-  -o-animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  /*@at-root{
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #006f9f 50%, #004766 51%, #003146 80%, #303030); }
+  #top-right-triangle.animate-in {
+    -moz-animation: top-right-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: top-right-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: top-right-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: top-right-triangle 200ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*@at-root{
         @keyframes top-right-triangle{
             @content;
         }
@@ -246,21 +276,27 @@
     right: 0; } }
 
 #zano-container {
-  width: 600px;
-  height: 400px;
+  width: 400px;
+  height: 10px;
   position: absolute;
   left: 50%;
-  top: 200px;
-  margin-left: -300px;
+  top: 400px;
+  margin-left: -200px;
+  opacity: 0;
   background: linear-gradient(#005a81, #004766);
   border: 1px solid #006f9f;
   box-shadow: 10px 10px 10px #303030;
-  overflow: hidden;
-  -moz-animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  -o-animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  -webkit-animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-  /*@at-root{
+  overflow: hidden; }
+  #zano-container.animate-in {
+    -moz-animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    /*@at-root{
         @keyframes zanoContainer{
             @content;
         }
@@ -271,44 +307,38 @@
     }*/ }
 
 @keyframes zanoContainer {
-  0% {
-    width: 400px;
-    margin-left: -200px;
-    height: 10px;
-    top: 400px;
-    opacity: 0; }
-
-  10% {
-    opacity: 1; }
-
   50% {
     width: 600px;
-    margin-left: -300px;
     height: 10px;
-    top: 400px; }
+    
+    top: 400px;
+    margin-left: -300px; }
 
   100% {
-    height: 400px; } }
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    margin-left: -300px;
+    opacity: 1; } }
 
 @-webkit-keyframes zanoContainer {
-  0% {
-    width: 400px;
-    margin-left: -200px;
-    height: 10px;
-    top: 400px;
-    opacity: 0; }
-
-  10% {
-    opacity: 1; }
-
   50% {
     width: 600px;
-    margin-left: -300px;
     height: 10px;
-    top: 400px; }
+    
+    top: 400px;
+    margin-left: -300px; }
 
   100% {
-    height: 400px; } }
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    margin-left: -300px;
+    opacity: 1; } }
 
 #menu {
   opacity: 0;
