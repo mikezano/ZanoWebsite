@@ -24,7 +24,7 @@ module Web.Client {
                 ]);
 
             //this.defaultRoute('/');
-            //this.registerAngularUiRouteDefault('/');
+            this.registerAngularUiRouteDefault('/');
         }
 
         registerController(controllerName: string, controllerConstructor: Function) {
@@ -68,7 +68,6 @@ module Web.Client {
                 $urlRouterProvider.otherwise(path);
             });
         }
-
 
         registerDirective(name: string, directiveFactory: ($timeout) => any) {
             this.app.directive(name, directiveFactory);

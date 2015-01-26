@@ -44,7 +44,7 @@
     top: 0;
     
     background: linear-gradient(45deg, #005a81, #005a81 40%, #006f9f 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)); }
-  #bottom-left-curtain.animate-in {
+  #bottom-left-curtain.animate-out {
     -moz-animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -o-animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -webkit-animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
@@ -62,7 +62,7 @@
             @content;
         }
     }*/ }
-  #bottom-left-curtain.animate-out {
+  #bottom-left-curtain.animate-in {
     -moz-animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -o-animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -webkit-animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
@@ -142,7 +142,7 @@
     right: 400px;
     
     background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #006f9f 50%, #005a81 60%, #005a81); }
-  #top-right-curtain.animate-in {
+  #top-right-curtain.animate-out {
     -moz-animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -o-animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -webkit-animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
@@ -160,7 +160,7 @@
             @content;
         }
     }*/ }
-  #top-right-curtain.animate-out {
+  #top-right-curtain.animate-in {
     -moz-animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -o-animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -webkit-animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
@@ -280,7 +280,7 @@
   height: 10px;
   position: absolute;
   left: 50%;
-  top: 400px;
+  top: 300px;
   margin-left: -200px;
   opacity: 0;
   background: linear-gradient(#005a81, #004766);
@@ -311,7 +311,7 @@
     width: 600px;
     height: 10px;
     
-    top: 400px;
+    top: 300px;
     margin-left: -300px; }
 
   100% {
@@ -319,7 +319,7 @@
     height: 400px;
     position: absolute;
     left: 50%;
-    top: 200px;
+    top: 100px;
     margin-left: -300px;
     opacity: 1; } }
 
@@ -328,7 +328,7 @@
     width: 600px;
     height: 10px;
     
-    top: 400px;
+    top: 300px;
     margin-left: -300px; }
 
   100% {
@@ -336,7 +336,7 @@
     height: 400px;
     position: absolute;
     left: 50%;
-    top: 200px;
+    top: 100px;
     margin-left: -300px;
     opacity: 1; } }
 

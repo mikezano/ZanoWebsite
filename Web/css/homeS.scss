@@ -146,11 +146,11 @@ $curtain_size:400px;
     }
     @include customAnimationFrames(bottom-left-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
 
-    &.animate-in{
+    &.animate-out{
         @include customAnimationFrames(open-left-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
     }
 
-    &.animate-out{
+    &.animate-in{
         @include customAnimationFrames(close-left-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
     }
 }
@@ -177,11 +177,11 @@ $curtain_size:400px;
 
     @include customAnimationFrames(top-right-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
 
-    &.animate-in{
+    &.animate-out{
         @include customAnimationFrames(open-right-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
     }
 
-    &.animate-out{
+    &.animate-in{
         @include customAnimationFrames(close-right-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
     }
 }
@@ -231,7 +231,7 @@ $triangleSize:300px;
 
 #zano-container{
 
-    @include setSizeAndPosition(400px, 10px, absolute, 50%, 400px, null, null, -1 * 200px);
+    @include setSizeAndPosition(400px, 10px, absolute, 50%, 300px, null, null, -1 * 200px);
     opacity:0;
     background: linear-gradient($colorBlue, $colorBlueDarken1);
     border:1px solid $colorBlueLighten1;
@@ -246,10 +246,10 @@ $triangleSize:300px;
 
 @include customKeyFrames(zanoContainer){
     50%{          
-        @include setSizeAndPosition($mainContainerWidth, 10px, null, null, 400px, null, null, -1 * 300px);
+        @include setSizeAndPosition($mainContainerWidth, 10px, null, null, 300px, null, null, -1 * 300px);
     }
     100%{
-        @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 200px, null, null, -1 * $mainContainerWidth/2);
+        @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
         opacity:1;
     }
 }

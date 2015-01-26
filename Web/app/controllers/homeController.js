@@ -6,26 +6,26 @@
     (function (Client) {
         var HomeController = (function () {
             function HomeController($timeout, $q, $animate) {
+                var _this = this;
                 this.$timeout = $timeout;
                 this.$animate = $animate;
                 this.message = "Message from Home";
 
                 //var show = Impressive(document, window);
-                this.currentPage = "views/resume.html";
-
+                //this.currentPage = "views/resume.html";
                 //this.el = $("#zano-container")[0];
-                this.$animate.animate($("#zano-container"), null, null, "animate-in").then(function () {
-                    console.log('que coza');
-                });
-                //            this.animationTracker($("#zano-container"), 'animate-in', true,() => {
-                //                console.log("did the intro");
-                //                this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, () => {
-                //                    console.log("did the triangles");
-                //                    this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-in', true, () => {
-                //                        console.log("curtains open");
-                //                    });
-                //                });
+                //            this.$animate.animate($("#zano-container"), null, null, "animate-in").then(() => {
+                //                console.log('que coza');
                 //            });
+                this.animationTracker($("#zano-container"), 'animate-in', true, function () {
+                    console.log("did the intro");
+                    _this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, function () {
+                        console.log("did the triangles");
+                        _this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-out', true, function () {
+                            console.log("curtains open");
+                        });
+                    });
+                });
             }
             HomeController.prototype.animationTracker = function (element, animationClass, keepAnimationClass, onAnimationEnd) {
                 if (typeof keepAnimationClass === "undefined") { keepAnimationClass = true; }
@@ -41,27 +41,29 @@
             };
 
             HomeController.prototype.changePage = function ($event) {
-                $('#bottom-left-curtain').addClass('close-left-curtain');
-                $('#top-right-curtain').addClass('close-right-curtain').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
-                    console.log("done");
+                var _this = this;
+                $('#bottom-left-curtain').addClass('animate-in');
+                $('#top-right-curtain').addClass('animate-in').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
+                    console.log('done');
+                    var nextPage = $($event.target).text();
+                    console.log(nextPage);
+                    switch (nextPage) {
+                        case 'LINK1':
+                            _this.currentPage = "views/intro.html";
+                            break;
+                        case 'LINK2':
+                            _this.currentPage = "views/music.html";
+                            break;
+                        case 'LINK3':
+                            _this.currentPage = "views/resume.html";
+                            break;
+                        case 'PROJECTS':
+                            _this.currentPage = "views/projects.html";
+                            break;
+                    }
 
-                    //                    var nextPage = $($event.target).text();
-                    //                    switch (nextPage) {
-                    //                        case 'HOME':
-                    //                            this.currentPage = "views/intro.html";
-                    //                            break;
-                    //                        case 'MUSIC':
-                    //                            this.currentPage = "views/music.html";
-                    //                            break;
-                    //                        case 'RESUME':
-                    //                            this.currentPage = "views/resume.html";
-                    //                            break;
-                    //                        case 'PROJECTS':
-                    //                            this.currentPage = "views/projects.html";
-                    //                            break;
-                    //                    }
-                    $('#bottom-left-curtain').removeClass('close-left-curtain');
-                    $('#top-right-curtain').removeClass('close-right-curtain');
+                    $('#bottom-left-curtain').removeClass('animate-in');
+                    $('#top-right-curtain').removeClass('animate-in');
                 });
                 //            this.$timeout(() => {
                 //
@@ -78,6 +80,6 @@
 app.registerController('Web.Client.HomeController', Web.Client.HomeController);
 
 //app.registerRoute('/state1', 'Web.Client.State1 as vm', 'views/state1.html');
-app.registerAngularUiRoute(Web.Client.HomeController, 'vm', "initial", "/home", "views/home.html");
+app.registerAngularUiRoute(Web.Client.HomeController, 'vm', "initial", "/", "views/home.html");
 //app.registerAngularUiRoute(Web.Client.ImpressController, 'vm', "impress.slide1", "/impress/#/step-1", "views/impress.html");
 //# sourceMappingURL=homeController.js.map

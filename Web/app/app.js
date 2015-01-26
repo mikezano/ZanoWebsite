@@ -19,8 +19,9 @@ var Web;
                         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|sip):/);
                     }
                 ]);
+
                 //this.defaultRoute('/');
-                //this.registerAngularUiRouteDefault('/');
+                this.registerAngularUiRouteDefault('/');
             }
             App.prototype.registerController = function (controllerName, controllerConstructor) {
                 this.app.controller(controllerName, controllerConstructor);
