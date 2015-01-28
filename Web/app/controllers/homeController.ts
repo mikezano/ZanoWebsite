@@ -8,6 +8,7 @@ module Web.Client {
         private message: string;
         public currentPage: string = "none";
         private el:Element;
+        public numbers: number[] = [];
 
         public static $inject = ['$timeout', '$q', '$animate', '$scope'];
         constructor(private $timeout: ng.ITimeoutService, $q:any, private $animate, private $scope) {
@@ -52,6 +53,15 @@ module Web.Client {
             }).then(() => {
                 return this.$animate.addClass($('#bottom-left-curtain'), 'animate-out');
             });
+        }
+
+        public generateNumbers(): void {
+            var length: number = Math.floor(Math.random() * 10) + 1;
+            this.numbers = [];
+            for(var i: number = 0; i<length; i++)
+            {
+                this.numbers.push(Math.floor(Math.random() * 100) + 1);
+            }
         }
 
         public animationTracker(element: JQuery, animationClass: string, keepAnimationClass: boolean = true, onAnimationEnd: () => void = null): void {

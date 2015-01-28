@@ -11,6 +11,7 @@
                 this.$animate = $animate;
                 this.$scope = $scope;
                 this.currentPage = "none";
+                this.numbers = [];
                 this.message = "Message from Home";
 
                 //var show = Impressive(document, window);
@@ -46,6 +47,14 @@
                     return _this.$animate.addClass($('#bottom-left-curtain'), 'animate-out');
                 });
             }
+            HomeController.prototype.generateNumbers = function () {
+                var length = Math.floor(Math.random() * 10) + 1;
+                this.numbers = [];
+                for (var i = 0; i < length; i++) {
+                    this.numbers.push(Math.floor(Math.random() * 100) + 1);
+                }
+            };
+
             HomeController.prototype.animationTracker = function (element, animationClass, keepAnimationClass, onAnimationEnd) {
                 if (typeof keepAnimationClass === "undefined") { keepAnimationClass = true; }
                 if (typeof onAnimationEnd === "undefined") { onAnimationEnd = null; }

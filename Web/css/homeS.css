@@ -408,4 +408,39 @@
   color: white;
   padding: 10px; }
 
+.staggerAnimation.ng-enter, .staggerAnimation.ng-leave, .staggerAnimation.ng-move {
+  -webkit-transition: 0.5s cubic-bezier(0.08, 0.84, 0.48, 0.99) all;
+  transition: 0.5s cubic-bezier(0.08, 0.84, 0.48, 0.99) all; }
+
+.staggerAnimation.ng-enter-stagger {
+  /* 50ms between each item being animated after the other */
+  -webkit-transition-delay: 200ms;
+  transition-delay: 200ms;
+  /* this is required here to prevent any CSS inheritance issues */
+  -webkit-transition-duration: 0;
+  transition-duration: 0; }
+
+/* ending enter and move styling
+   (this is what the element will animate from */
+.staggerAnimation.ng-enter {
+  opacity: 0;
+  margin-left: -10px; }
+
+/* ending enter and move styling
+   (this is what the element will animate towards */
+.staggerAnimation.ng-enter.ng-enter-active {
+  opacity: 1;
+  margin-left: 0px; }
+
+/* starting leave animation */
+.staggerAnimation.ng-leave {
+  opacity: 0; }
+
+/* ending leave animation */
+.staggerAnimation.ng-leave.ng-leave-active {
+  opacity: 0; }
+
+.random-numbers li {
+  color: white; }
+
 /*# sourceMappingURL=homeS.css.map */
