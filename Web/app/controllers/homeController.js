@@ -5,10 +5,12 @@
     //https://www.youtube.com/watch?v=3hktBbxFxSM#t=69
     (function (Client) {
         var HomeController = (function () {
-            function HomeController($timeout, $q, $animate) {
+            function HomeController($timeout, $q, $animate, $scope) {
                 var _this = this;
                 this.$timeout = $timeout;
                 this.$animate = $animate;
+                this.$scope = $scope;
+                this.currentPage = "none";
                 this.message = "Message from Home";
 
                 //var show = Impressive(document, window);
@@ -17,14 +19,31 @@
                 //            this.$animate.animate($("#zano-container"), null, null, "animate-in").then(() => {
                 //                console.log('que coza');
                 //            });
-                this.animationTracker($("#zano-container"), 'animate-in', true, function () {
-                    console.log("did the intro");
-                    _this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, function () {
-                        console.log("did the triangles");
-                        _this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-out', true, function () {
-                            console.log("curtains open");
-                        });
+                //            this.animationTracker($("#zano-container"), 'animate-in', true,() => {
+                //                console.log("did the intro");
+                //                this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, () => {
+                //                    console.log("did the triangles");
+                //                    this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-out', true, () => {
+                //                        console.log("curtains open");
+                //                    });
+                //                });
+                //            });
+                //            this.$animate.addClass($("#zano-container"), 'animate-in').then(() => {
+                //                console.log("promised you");
+                //
+                //                console.log(this);
+                //                console.log(this.currentPage);
+                //            })
+                var firstAnimation = this.$animate.addClass($("#zano-container"), 'animate-in');
+
+                firstAnimation.then(function (result) {
+                    console.log(result);
+                    console.log(_this);
+                    _this.$scope.$apply(function () {
+                        return _this.$animate.addClass($("#bottom-left-triangle, #top-right-triangle"), 'animate-in');
                     });
+                }).then(function () {
+                    return _this.$animate.addClass($('#bottom-left-curtain'), 'animate-out');
                 });
             }
             HomeController.prototype.animationTracker = function (element, animationClass, keepAnimationClass, onAnimationEnd) {
@@ -45,6 +64,7 @@
                 $('#bottom-left-curtain').addClass('animate-in');
                 $('#top-right-curtain').addClass('animate-in').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
                     console.log('done');
+                    console.log(_this);
                     var nextPage = $($event.target).text();
                     console.log(nextPage);
                     switch (nextPage) {
@@ -70,7 +90,7 @@
                 //
                 //            }, 200);
             };
-            HomeController.$inject = ['$timeout', '$q', '$animate'];
+            HomeController.$inject = ['$timeout', '$q', '$animate', '$scope'];
             return HomeController;
         })();
         Client.HomeController = HomeController;

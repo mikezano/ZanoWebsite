@@ -530,15 +530,17 @@ angular.module('ngAnimate', ['ng'])
       }
 
       function runAnimationPostDigest(fn) {
+          
         var cancelFn, defer = $$q.defer();
         defer.promise.$$cancelFn = function() {
           cancelFn && cancelFn();
         };
-        $rootScope.$$postDigest(function() {
+        $rootScope.$$postDigest(function () {
           cancelFn = fn(function() {
             defer.resolve();
           });
         });
+        
         return defer.promise;
       }
 
@@ -1080,7 +1082,7 @@ angular.module('ngAnimate', ['ng'])
          * @param {object=} options an optional collection of styles that will be picked up by the CSS transition/animation
          * @return {Promise} the animation callback promise
         */
-        addClass: function(element, className, options) {
+        addClass: function (element, className, options) {            
           return this.setClass(element, className, [], options);
         },
 
@@ -1146,7 +1148,8 @@ angular.module('ngAnimate', ['ng'])
          * @param {object=} options an optional collection of styles that will be picked up by the CSS transition/animation
          * @return {Promise} the animation callback promise
          */
-        setClass: function(element, add, remove, options) {
+        setClass: function (element, add, remove, options) {
+            
           options = parseAnimateOptions(options);
 
           var STORAGE_KEY = '$$animateClasses';
@@ -1194,8 +1197,11 @@ angular.module('ngAnimate', ['ng'])
               options: options
             });
           }
+          console.log("yes");
+          console.log(element);
+          return cache.promise = runAnimationPostDigest(function (done) {
 
-          return cache.promise = runAnimationPostDigest(function(done) {
+     
             var parentElement = element.parent();
             var elementNode = extractElementNode(element);
             var parentNode = elementNode.parentNode;

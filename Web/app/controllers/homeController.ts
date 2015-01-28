@@ -6,11 +6,11 @@ module Web.Client {
     export class HomeController {
 
         private message: string;
-        private currentPage: string;
+        public currentPage: string = "none";
         private el:Element;
 
-        public static $inject = ['$timeout', '$q', '$animate'];
-        constructor(private $timeout: ng.ITimeoutService, $q:any, private $animate) {
+        public static $inject = ['$timeout', '$q', '$animate', '$scope'];
+        constructor(private $timeout: ng.ITimeoutService, $q:any, private $animate, private $scope) {
             this.message = "Message from Home";
             //var show = Impressive(document, window);
             //this.currentPage = "views/resume.html";
@@ -21,15 +21,36 @@ module Web.Client {
 //                console.log('que coza');
 //            });
 
+//            this.animationTracker($("#zano-container"), 'animate-in', true,() => {
+//                console.log("did the intro");
+//                this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, () => {
+//                    console.log("did the triangles");
+//                    this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-out', true, () => {
+//                        console.log("curtains open");
+//                    });
+//                });
+//            });
 
-            this.animationTracker($("#zano-container"), 'animate-in', true,() => {
-                console.log("did the intro");
-                this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, () => {
-                    console.log("did the triangles");
-                    this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-out', true, () => {
-                        console.log("curtains open");
-                    });
+
+//            this.$animate.addClass($("#zano-container"), 'animate-in').then(() => {
+//                console.log("promised you");
+//
+//                console.log(this);
+//                console.log(this.currentPage);
+//            })
+
+            var firstAnimation = this.$animate.addClass($("#zano-container"), 'animate-in');
+
+            firstAnimation
+            .then((result) => {
+                console.log(result);
+                console.log(this);
+                this.$scope.$apply(() => {
+                    return this.$animate.addClass($("#bottom-left-triangle, #top-right-triangle"), 'animate-in');
                 });
+                
+            }).then(() => {
+                return this.$animate.addClass($('#bottom-left-curtain'), 'animate-out');
             });
         }
 
@@ -52,7 +73,8 @@ module Web.Client {
             $('#bottom-left-curtain').addClass('animate-in');
             $('#top-right-curtain').addClass('animate-in')
                 .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', () => {
-                console.log('done');
+                    console.log('done');
+                console.log(this);
                     var nextPage = $($event.target).text();
                     console.log(nextPage);
                     switch (nextPage) {
