@@ -7,59 +7,68 @@ module Web.Client {
 
         private message: string;
         public currentPage: string = "none";
-        private el:Element;
+        private el: Element;
         public numbers: number[] = [];
 
         public static $inject = ['$timeout', '$q', '$animate', '$scope'];
-        constructor(private $timeout: ng.ITimeoutService, $q:any, private $animate, private $scope) {
+        constructor(private $timeout: ng.ITimeoutService, $q: any, private $animate, private $scope) {
             this.message = "Message from Home";
             //var show = Impressive(document, window);
             //this.currentPage = "views/resume.html";
 
 
             //this.el = $("#zano-container")[0];
-//            this.$animate.animate($("#zano-container"), null, null, "animate-in").then(() => {
-//                console.log('que coza');
-//            });
+            //            this.$animate.animate($("#zano-container"), null, null, "animate-in").then(() => {
+            //                console.log('que coza');
+            //            });
 
-//            this.animationTracker($("#zano-container"), 'animate-in', true,() => {
-//                console.log("did the intro");
-//                this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, () => {
-//                    console.log("did the triangles");
-//                    this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-out', true, () => {
-//                        console.log("curtains open");
-//                    });
-//                });
-//            });
+            //            this.animationTracker($("#zano-container"), 'animate-in', true,() => {
+            //                console.log("did the intro");
+            //                this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, () => {
+            //                    console.log("did the triangles");
+            //                    this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-out', true, () => {
+            //                        console.log("curtains open");
+            //                    });
+            //                });
+            //            });
 
 
-//            this.$animate.addClass($("#zano-container"), 'animate-in').then(() => {
-//                console.log("promised you");
-//
-//                console.log(this);
-//                console.log(this.currentPage);
-//            })
+            //            this.$animate.addClass($("#zano-container"), 'animate-in').then(() => {
+            //                console.log("promised you");
+            //
+            //                console.log(this);
+            //                console.log(this.currentPage);
+            //            })
 
-            var firstAnimation = this.$animate.addClass($("#zano-container"), 'animate-in');
 
-            firstAnimation
-            .then((result) => {
-                console.log(result);
-                console.log(this);
-                this.$scope.$apply(() => {
-                    return this.$animate.addClass($("#bottom-left-triangle, #top-right-triangle"), 'animate-in');
+
+            this.$animate.addClass($("#zano-container"), 'animate-in')
+                .then(() => {
+                    var trianglesAnimate: any = [];
+                    this.$scope.$apply(() => {
+
+                        trianglesAnimate.push(this.$animate.addClass($('#bottom-left-triangle'), 'animate-in'));
+                        trianglesAnimate.push(this.$animate.addClass($('#top-right-triangle'), 'animate-in'));
+
+                    });
+                    return trianglesAnimate.all();
+                }).then(() => {
+                console.log("curtains");
+                    var curtainsAnimate: any = [];
+                    this.$scope.$apply(() => {
+
+                        curtainsAnimate.push(this.$animate.addClass($('#bottom-left-curtain'), 'animate-in'));
+                        curtainsAnimate.push(this.$animate.addClass($('#top-right-curtain'), 'animate-in'));
+
+                    });
+                    return curtainsAnimate.all();
                 });
-                
-            }).then(() => {
-                return this.$animate.addClass($('#bottom-left-curtain'), 'animate-out');
-            });
         }
 
         public generateNumbers(): void {
             var length: number = Math.floor(Math.random() * 10) + 1;
             this.numbers = [];
-            for(var i: number = 0; i<length; i++)
-            {
+            for (var i: number = 0; i < length; i++) {
                 this.numbers.push(Math.floor(Math.random() * 100) + 1);
             }
         }
@@ -70,12 +79,12 @@ module Web.Client {
                 .addClass(animationClass)
                 .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', () => {
 
-                    if(!keepAnimationClass)
+                    if (!keepAnimationClass)
                         element.removeClass(animationClass);
 
-                    if(onAnimationEnd)
+                    if (onAnimationEnd)
                         onAnimationEnd();
-                });  
+                });
         }
 
         public changePage($event): void {
@@ -84,7 +93,7 @@ module Web.Client {
             $('#top-right-curtain').addClass('animate-in')
                 .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', () => {
                     console.log('done');
-                console.log(this);
+                    console.log(this);
                     var nextPage = $($event.target).text();
                     console.log(nextPage);
                     switch (nextPage) {
@@ -104,12 +113,12 @@ module Web.Client {
 
 
                     $('#bottom-left-curtain').removeClass('animate-in');
-                    $('#top-right-curtain').removeClass('animate-in');         
-            });
-//            this.$timeout(() => {
-//
-//
-//            }, 200);
+                    $('#top-right-curtain').removeClass('animate-in');
+                });
+            //            this.$timeout(() => {
+            //
+            //
+            //            }, 200);
         }
     }
 }
@@ -118,4 +127,3 @@ app.registerController('Web.Client.HomeController', Web.Client.HomeController);
 app.registerAngularUiRoute(Web.Client.HomeController, 'vm', "initial", "/", "views/home.html");
 //app.registerAngularUiRoute(Web.Client.ImpressController, 'vm', "impress.slide1", "/impress/#/step-1", "views/impress.html");
 
- 

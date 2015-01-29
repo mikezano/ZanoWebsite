@@ -35,16 +35,21 @@
                 //                console.log(this);
                 //                console.log(this.currentPage);
                 //            })
-                var firstAnimation = this.$animate.addClass($("#zano-container"), 'animate-in');
-
-                firstAnimation.then(function (result) {
-                    console.log(result);
-                    console.log(_this);
+                this.$animate.addClass($("#zano-container"), 'animate-in').then(function () {
+                    var trianglesAnimate = [];
                     _this.$scope.$apply(function () {
-                        return _this.$animate.addClass($("#bottom-left-triangle, #top-right-triangle"), 'animate-in');
+                        trianglesAnimate.push(_this.$animate.addClass($('#bottom-left-triangle'), 'animate-in'));
+                        trianglesAnimate.push(_this.$animate.addClass($('#top-right-triangle'), 'animate-in'));
                     });
+                    return trianglesAnimate.all();
                 }).then(function () {
-                    return _this.$animate.addClass($('#bottom-left-curtain'), 'animate-out');
+                    console.log("curtains");
+                    var curtainsAnimate = [];
+                    _this.$scope.$apply(function () {
+                        curtainsAnimate.push(_this.$animate.addClass($('#bottom-left-curtain'), 'animate-in'));
+                        curtainsAnimate.push(_this.$animate.addClass($('#top-right-curtain'), 'animate-in'));
+                    });
+                    return curtainsAnimate.all();
                 });
             }
             HomeController.prototype.generateNumbers = function () {
