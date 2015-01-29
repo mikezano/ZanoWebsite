@@ -11,7 +11,7 @@
                 this.$animate = $animate;
                 this.$scope = $scope;
                 this.numbers = [];
-                this.projectNames = ['Project1', 'Project2', 'Project3', 'Project4', 'Project5'];
+                this.projectNames = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Project 6', 'Project 7', 'Project 8', 'Project 9'];
                 this.message = "Message from Home";
 
                 this.animatePageLoad();

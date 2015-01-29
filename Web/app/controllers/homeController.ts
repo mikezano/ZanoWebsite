@@ -9,7 +9,7 @@ module Web.Client {
         public currentPage: string;
         private el: Element;
         public numbers: number[] = [];
-        public projectNames: string[] = ['Project1', 'Project2', 'Project3', 'Project4', 'Project5'];
+        public projectNames: string[] = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Project 6', 'Project 7', 'Project 8', 'Project 9'];
 
         public static $inject = ['$timeout', '$q', '$animate', '$scope'];
         constructor(private $timeout: ng.ITimeoutService, private $q: ng.IQService, private $animate, private $scope) {

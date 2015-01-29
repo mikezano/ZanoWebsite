@@ -368,7 +368,7 @@ $triangleSize:300px;
     -webkit-transition: 0.5s $quick-ease-in all;
     transition: 0.5s $quick-ease-in all;
     opacity:0;
-    margin-left:-50px;
+    margin-left:-10px;
 }
 
 .projectsStagger.ng-enter-stagger{
@@ -383,5 +383,6 @@ $triangleSize:300px;
 
 .project-list{ 
     list-style-type:none;
-    padding-bottom:30px;
+    padding:0;
+    & li{height:50px;}
 }

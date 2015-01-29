@@ -449,7 +449,7 @@
   -webkit-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
   transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
   opacity: 0;
-  margin-left: -50px; }
+  margin-left: -10px; }
 
 .projectsStagger.ng-enter-stagger {
   transition-delay: 100ms;
@@ -461,6 +461,8 @@
 
 .project-list {
   list-style-type: none;
-  padding-bottom: 30px; }
+  padding: 0; }
+  .project-list li {
+    height: 50px; }
 
 /*# sourceMappingURL=homeS.css.map */
