@@ -1197,8 +1197,6 @@ angular.module('ngAnimate', ['ng'])
               options: options
             });
           }
-          console.log("yes");
-          console.log(element);
           return cache.promise = runAnimationPostDigest(function (done) {
 
      

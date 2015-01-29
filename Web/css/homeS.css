@@ -45,10 +45,10 @@
     
     background: linear-gradient(45deg, #005a81, #005a81 40%, #006f9f 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)); }
   #bottom-left-curtain.animate-out {
-    -moz-animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -o-animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -webkit-animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    animation: open-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation: open-left-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: open-left-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: open-left-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: open-left-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
@@ -63,10 +63,10 @@
         }
     }*/ }
   #bottom-left-curtain.animate-in {
-    -moz-animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -o-animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -webkit-animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    animation: close-left-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation: close-left-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: close-left-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: close-left-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: close-left-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
@@ -143,10 +143,10 @@
     
     background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #006f9f 50%, #005a81 60%, #005a81); }
   #top-right-curtain.animate-out {
-    -moz-animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -o-animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -webkit-animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    animation: open-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation: open-right-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: open-right-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: open-right-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: open-right-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
@@ -161,10 +161,10 @@
         }
     }*/ }
   #top-right-curtain.animate-in {
-    -moz-animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -o-animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -webkit-animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    animation: close-right-curtain 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation: close-right-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: close-right-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: close-right-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: close-right-curtain 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
@@ -442,5 +442,25 @@
 
 .random-numbers li {
   color: white; }
+
+.projectsStagger.ng-enter {
+  -moz-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+  -o-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+  -webkit-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+  transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+  opacity: 0;
+  margin-left: -50px; }
+
+.projectsStagger.ng-enter-stagger {
+  transition-delay: 100ms;
+  transition-duration: 0; }
+
+.projectsStagger.ng-enter.ng-enter-active {
+  opacity: 1;
+  margin-left: 0; }
+
+.project-list {
+  list-style-type: none;
+  padding-bottom: 30px; }
 
 /*# sourceMappingURL=homeS.css.map */

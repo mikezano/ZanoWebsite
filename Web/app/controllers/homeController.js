@@ -6,51 +6,15 @@
     (function (Client) {
         var HomeController = (function () {
             function HomeController($timeout, $q, $animate, $scope) {
-                var _this = this;
                 this.$timeout = $timeout;
+                this.$q = $q;
                 this.$animate = $animate;
                 this.$scope = $scope;
-                this.currentPage = "none";
                 this.numbers = [];
+                this.projectNames = ['Project1', 'Project2', 'Project3', 'Project4', 'Project5'];
                 this.message = "Message from Home";
 
-                //var show = Impressive(document, window);
-                //this.currentPage = "views/resume.html";
-                //this.el = $("#zano-container")[0];
-                //            this.$animate.animate($("#zano-container"), null, null, "animate-in").then(() => {
-                //                console.log('que coza');
-                //            });
-                //            this.animationTracker($("#zano-container"), 'animate-in', true,() => {
-                //                console.log("did the intro");
-                //                this.animationTracker($('#bottom-left-triangle, #top-right-triangle'), 'animate-in', true, () => {
-                //                    console.log("did the triangles");
-                //                    this.animationTracker($('#bottom-left-curtain, #top-right-curtain'), 'animate-out', true, () => {
-                //                        console.log("curtains open");
-                //                    });
-                //                });
-                //            });
-                //            this.$animate.addClass($("#zano-container"), 'animate-in').then(() => {
-                //                console.log("promised you");
-                //
-                //                console.log(this);
-                //                console.log(this.currentPage);
-                //            })
-                this.$animate.addClass($("#zano-container"), 'animate-in').then(function () {
-                    var trianglesAnimate = [];
-                    _this.$scope.$apply(function () {
-                        trianglesAnimate.push(_this.$animate.addClass($('#bottom-left-triangle'), 'animate-in'));
-                        trianglesAnimate.push(_this.$animate.addClass($('#top-right-triangle'), 'animate-in'));
-                    });
-                    return trianglesAnimate.all();
-                }).then(function () {
-                    console.log("curtains");
-                    var curtainsAnimate = [];
-                    _this.$scope.$apply(function () {
-                        curtainsAnimate.push(_this.$animate.addClass($('#bottom-left-curtain'), 'animate-in'));
-                        curtainsAnimate.push(_this.$animate.addClass($('#top-right-curtain'), 'animate-in'));
-                    });
-                    return curtainsAnimate.all();
-                });
+                this.animatePageLoad();
             }
             HomeController.prototype.generateNumbers = function () {
                 var length = Math.floor(Math.random() * 10) + 1;
@@ -73,14 +37,37 @@
                 });
             };
 
+            HomeController.prototype.animatePageLoad = function () {
+                var _this = this;
+                this.$animate.addClass($("#zano-container"), 'animate-in').then(function () {
+                    var trianglesAnimate = [];
+                    _this.$scope.$apply(function () {
+                        trianglesAnimate.push(_this.$animate.addClass($('#bottom-left-triangle'), 'animate-in'));
+                        trianglesAnimate.push(_this.$animate.addClass($('#top-right-triangle'), 'animate-in'));
+                    });
+                    return _this.$q.all(trianglesAnimate);
+                }).then(function () {
+                    var curtainsAnimate = [];
+                    _this.$scope.$apply(function () {
+                        curtainsAnimate.push(_this.$animate.addClass($('#bottom-left-curtain'), 'animate-out'));
+                        curtainsAnimate.push(_this.$animate.addClass($('#top-right-curtain'), 'animate-out'));
+                    });
+                    return _this.$q.all(curtainsAnimate);
+                });
+            };
+
             HomeController.prototype.changePage = function ($event) {
                 var _this = this;
-                $('#bottom-left-curtain').addClass('animate-in');
-                $('#top-right-curtain').addClass('animate-in').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
-                    console.log('done');
-                    console.log(_this);
+                var curtainsAnimate = [];
+                curtainsAnimate.push(this.$animate.addClass($('#bottom-left-curtain'), 'animate-in'));
+                curtainsAnimate.push(this.$animate.addClass($('#top-right-curtain'), 'animate-in'));
+
+                this.$q.all(curtainsAnimate).then(function () {
+                    console.log("here");
+
+                    //this.$scope.$apply(() => {
                     var nextPage = $($event.target).text();
-                    console.log(nextPage);
+
                     switch (nextPage) {
                         case 'LINK1':
                             _this.currentPage = "views/intro.html";
@@ -98,11 +85,34 @@
 
                     $('#bottom-left-curtain').removeClass('animate-in');
                     $('#top-right-curtain').removeClass('animate-in');
+                    //});
                 });
-                //            this.$timeout(() => {
+                //            $('#bottom-left-curtain').addClass('animate-in');
+                //            $('#top-right-curtain').addClass('animate-in')
+                //                .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', () => {
+                //                    console.log('done');
+                //                    console.log(this);
+                //                    var nextPage = $($event.target).text();
+                //                    console.log(nextPage);
+                //                    switch (nextPage) {
+                //                        case 'LINK1':
+                //                            this.currentPage = "views/intro.html";
+                //                            break;
+                //                        case 'LINK2':
+                //                            this.currentPage = "views/music.html";
+                //                            break;
+                //                        case 'LINK3':
+                //                            this.currentPage = "views/resume.html";
+                //                            break;
+                //                        case 'PROJECTS':
+                //                            this.currentPage = "views/projects.html";
+                //                            break;
+                //                    }
                 //
                 //
-                //            }, 200);
+                //                    $('#bottom-left-curtain').removeClass('animate-in');
+                //                    $('#top-right-curtain').removeClass('animate-in');
+                //                });
             };
             HomeController.$inject = ['$timeout', '$q', '$animate', '$scope'];
             return HomeController;

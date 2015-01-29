@@ -1,1 +1,7 @@
-﻿<p>PROJECTS</p>
+﻿
+
+<ul class="project-list">
+    <li ng-repeat="name in vm.projectNames" 
+        ng-style="{'padding-left': $index*30}"
+        class="projectsStagger">{{name}}</li>
+</ul>

@@ -147,11 +147,11 @@ $curtain_size:400px;
     @include customAnimationFrames(bottom-left-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
 
     &.animate-out{
-        @include customAnimationFrames(open-left-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
+        @include customAnimationFrames(open-left-curtain, $triangle-animation-time + 500ms, $quick-ease-in, 1, null, forwards);
     }
 
     &.animate-in{
-        @include customAnimationFrames(close-left-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
+        @include customAnimationFrames(close-left-curtain, $triangle-animation-time + 500ms, $quick-ease-in, 1, null, forwards);
     }
 }
 
@@ -178,11 +178,11 @@ $curtain_size:400px;
     @include customAnimationFrames(top-right-curtain, $triangle-animation-time, $quick-ease-in, 1, $zano-container-animation-time + $triangle-animation-time, forwards);
 
     &.animate-out{
-        @include customAnimationFrames(open-right-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
+        @include customAnimationFrames(open-right-curtain, $triangle-animation-time + 500ms, $quick-ease-in, 1, null, forwards);
     }
 
     &.animate-in{
-        @include customAnimationFrames(close-right-curtain, $triangle-animation-time, $quick-ease-in, 1, null, forwards);
+        @include customAnimationFrames(close-right-curtain, $triangle-animation-time + 500ms, $quick-ease-in, 1, null, forwards);
     }
 }
 @include customKeyFrames(open-right-curtain){
@@ -361,3 +361,27 @@ $triangleSize:300px;
 .staggerAnimation.ng-leave.ng-leave-active { opacity:0; }
 
 .random-numbers li{color:white;}
+
+.projectsStagger.ng-enter {
+    -moz-transition: 0.5s $quick-ease-in all;
+    -o-transition: 0.5s $quick-ease-in all;
+    -webkit-transition: 0.5s $quick-ease-in all;
+    transition: 0.5s $quick-ease-in all;
+    opacity:0;
+    margin-left:-50px;
+}
+
+.projectsStagger.ng-enter-stagger{
+    transition-delay:100ms;
+    transition-duration:0;
+}
+
+.projectsStagger.ng-enter.ng-enter-active{
+    opacity:1;
+    margin-left:0;
+}
+
+.project-list{ 
+    list-style-type:none;
+    padding-bottom:30px;
+}
