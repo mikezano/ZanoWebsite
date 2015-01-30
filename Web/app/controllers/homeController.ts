@@ -61,6 +61,9 @@ module Web.Client {
                 });          
         }
 
+        public startRotation(): void {
+            $('#zano-container').toggleClass('spin');
+        }
 
         public changePage($event): void {
 

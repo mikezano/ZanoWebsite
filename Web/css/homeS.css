@@ -305,6 +305,20 @@
             @content;
         }
     }*/ }
+  #zano-container.spin {
+    -moz-animation: spinZanoContainer 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) infinite;
+    -o-animation: spinZanoContainer 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) infinite;
+    -webkit-animation: spinZanoContainer 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) infinite;
+    animation: spinZanoContainer 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) infinite;
+    /*@at-root{
+        @keyframes spinZanoContainer{
+            @content;
+        }
+
+        @-webkit-keyframes spinZanoContainer{
+            @content;
+        }
+    }*/ }
 
 @keyframes zanoContainer {
   50% {
@@ -338,6 +352,54 @@
     left: 50%;
     top: 100px;
     margin-left: -300px;
+    opacity: 1; } }
+
+@keyframes spinZanoContainer {
+  0% {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    margin-left: -300px;
+    opacity: 1; }
+
+  100% {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    margin-left: -300px;
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+    opacity: 1; } }
+
+@-webkit-keyframes spinZanoContainer {
+  0% {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    margin-left: -300px;
+    opacity: 1; }
+
+  100% {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    margin-left: -300px;
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
     opacity: 1; } }
 
 #menu {
@@ -464,5 +526,17 @@
   padding: 0; }
   .project-list li {
     height: 50px; }
+
+#perspective-container {
+  perspective: 1000px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0; }
+
+#buttons-container {
+  position: relative;
+  z-index: 1000; }
 
 /*# sourceMappingURL=homeS.css.map */

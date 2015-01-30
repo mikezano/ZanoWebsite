@@ -56,6 +56,10 @@
                 });
             };
 
+            HomeController.prototype.startRotation = function () {
+                $('#zano-container').toggleClass('spin');
+            };
+
             HomeController.prototype.changePage = function ($event) {
                 var _this = this;
                 var curtainsAnimate = [];

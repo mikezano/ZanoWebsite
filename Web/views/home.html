@@ -5,29 +5,38 @@
 
 
 
-<div id="zano-container" ng-animate-children>
 
 
-    <div id="current-page" ng-include="vm.currentPage"></div>
-    <div id="bottom-left-curtain"></div>
-    <div id="top-right-curtain"></div>
-    <div id="bottom-left-triangle"></div>
-    <div id="top-right-triangle"></div>
 
-    {{vm.currentPage}}
-    <div id="menu">
-        <ul>
-            <li class="item1" ng-click="vm.changePage($event)">LINK1</li>
-            <li class="item2" ng-click="vm.changePage($event)">LINK2</li>
-            <li class="item3" ng-click="vm.changePage($event)">LINK3</li>
-            <li class="item4" ng-click="vm.changePage($event)">PROJECTS</li>
-        </ul>
+<div id="perspective-container">
+    <div id="zano-container" ng-animate-children>
+
+
+        <div id="current-page" ng-include="vm.currentPage"></div>
+        <div id="bottom-left-curtain"></div>
+        <div id="top-right-curtain"></div>
+        <div id="bottom-left-triangle"></div>
+        <div id="top-right-triangle"></div>
+
+        {{vm.currentPage}}
+        <div id="menu">
+            <ul>
+                <li class="item1" ng-click="vm.changePage($event)">LINK1</li>
+                <li class="item2" ng-click="vm.changePage($event)">LINK2</li>
+                <li class="item3" ng-click="vm.changePage($event)">LINK3</li>
+                <li class="item4" ng-click="vm.changePage($event)">PROJECTS</li>
+            </ul>
+        </div>
     </div>
+
 </div>
 
+<div id="buttons-container">
+    <button ng-click="vm.generateNumbers()">Stagger Demo</button>
+    {{vm.numbers}}
+    <ul class="random-numbers">
+        <li ng-repeat="number in vm.numbers" class="staggerAnimation">{{number}}</li>
+    </ul>
 
-<button ng-click="vm.generateNumbers()">Stagger Demo</button>
-{{vm.numbers}}
-<ul class="random-numbers">
-    <li ng-repeat="number in vm.numbers" class="staggerAnimation">{{number}}</li>
-</ul>
+    <button ng-click="vm.startRotation()">Rotation</button>
+</div>

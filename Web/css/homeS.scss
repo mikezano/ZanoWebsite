@@ -242,6 +242,10 @@ $triangleSize:300px;
         @include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, forwards);
     }
     //@include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, null);
+
+    &.spin{
+        @include customAnimationFrames(spinZanoContainer, 5000ms, $quick-ease-in, infinite, null, null);
+    }
 }
 
 @include customKeyFrames(zanoContainer){
@@ -250,6 +254,23 @@ $triangleSize:300px;
     }
     100%{
         @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
+        opacity:1;
+    }
+}
+
+@include customKeyFrames(spinZanoContainer) {
+    0%{        
+        @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
+        opacity:1;
+    }
+    100% {
+                @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
+
+        -moz-transform: rotateY(360deg);
+        -ms-transform: rotateY(360deg);
+        -o-transform: rotateY(360deg);
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
         opacity:1;
     }
 }
@@ -385,4 +406,18 @@ $triangleSize:300px;
     list-style-type:none;
     padding:0;
     & li{height:50px;}
+}
+
+#perspective-container{
+    perspective:1000px;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+}
+
+#buttons-container{
+    position:relative;
+    z-index:1000;
 }
