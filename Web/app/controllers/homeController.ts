@@ -42,9 +42,11 @@ module Web.Client {
         }
 
         public animatePageLoad(): void {
-
+            console.log("animate1");
             this.$animate.addClass($("#zano-container"), 'animate-in')
+            
                 .then(() => {
+                    console.log("animate2");
                     var trianglesAnimate: ng.IPromise<void>[] = [];
                     this.$scope.$apply(() => {
                         trianglesAnimate.push(this.$animate.addClass($('#bottom-left-triangle'), 'animate-in'));

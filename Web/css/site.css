@@ -127,14 +127,12 @@
     opacity: 1; }
 
   100% {
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 400px;
     position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin-left: 0;
+    left: 50%;
+    top: 100px;
+    margin-left: -300px;
     opacity: 0; } }
 
 @-webkit-keyframes zoomZanoContainer {
@@ -148,14 +146,12 @@
     opacity: 1; }
 
   100% {
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 400px;
     position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin-left: 0;
+    left: 50%;
+    top: 100px;
+    margin-left: -300px;
     opacity: 0; } }
 
 #bottom-left-triangle {
@@ -422,52 +418,41 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed; }
 
-/* 50ms between each item being animated after the other */
-/* this is required here to prevent any CSS inheritance issues */
-/* ending enter and move styling
-   (this is what the element will animate from */
-/* ending enter and move styling
-   (this is what the element will animate towards */
-/* starting leave animation */
-/* ending leave animation */
-/*.random-numbers li{color:white;}
+#content {
+  color: white; }
 
 .projectsStagger.ng-enter {
-    -moz-transition: 0.5s $quick-ease-in all;
-    -o-transition: 0.5s $quick-ease-in all;
-    -webkit-transition: 0.5s $quick-ease-in all;
-    transition: 0.5s $quick-ease-in all;
-    opacity:0;
-    margin-left:-10px;
-}
+  -moz-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+  -o-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+  -webkit-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+  transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+  opacity: 0;
+  margin-left: -10px; }
 
-.projectsStagger.ng-enter-stagger{
-    transition-delay:100ms;
-    transition-duration:0;
-}
+.projectsStagger.ng-enter-stagger {
+  transition-delay: 100ms;
+  transition-duration: 0; }
 
-.projectsStagger.ng-enter.ng-enter-active{
-    opacity:1;
-    margin-left:0;
-}
+.projectsStagger.ng-enter.ng-enter-active {
+  opacity: 1;
+  margin-left: 0; }
 
-.project-list{ 
-    list-style-type:none;
-    padding:0;
-    & li{height:50px;}
-}
+.project-list {
+  list-style-type: none;
+  padding: 0; }
+  .project-list li {
+    height: 50px; }
 
-#perspective-container{
-    perspective:1000px;
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    top:0;
-}
+#perspective-container {
+  perspective: 1000px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0; }
 
-#buttons-container{
-    position:relative;
-    z-index:1000;
-}*/
+#buttons-container {
+  position: relative;
+  z-index: 1000; }
+
 /*# sourceMappingURL=site.css.map */

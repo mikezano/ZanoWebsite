@@ -40,7 +40,9 @@
 
             HomeController.prototype.animatePageLoad = function () {
                 var _this = this;
+                console.log("animate1");
                 this.$animate.addClass($("#zano-container"), 'animate-in').then(function () {
+                    console.log("animate2");
                     var trianglesAnimate = [];
                     _this.$scope.$apply(function () {
                         trianglesAnimate.push(_this.$animate.addClass($('#bottom-left-triangle'), 'animate-in'));

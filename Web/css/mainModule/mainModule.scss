@@ -50,14 +50,13 @@
     }
 }
 
-
 @include customKeyFrames(zoomZanoContainer) {
     0%{     
     @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
     opacity:1;
     }
     100%{
-        @include setSizeAndPosition(100%, 100%, absolute, 0, 0, 0, 0, 0);
+       @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
         opacity:0;
     }
 }

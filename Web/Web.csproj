@@ -182,6 +182,7 @@
     <Content Include="css\mainModule\mainModuleContent.css.map">
       <DependentUpon>mainModuleContent.css</DependentUpon>
     </Content>
+    <Content Include="css\projectsController\projectsController.scss" />
     <None Include="Properties\PublishProfiles\zano.pubxml" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />
