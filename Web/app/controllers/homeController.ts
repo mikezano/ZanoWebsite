@@ -70,9 +70,12 @@ module Web.Client {
         }
 
         public changeUrl(): void {
-            console.log('change');
-            console.log(this.$location.path());
-            this.$location.path('/projects');
+            this.$animate.addClass($('#zano-container'), 'zoomOut').then(() => {
+                this.$scope.$apply(() => {
+                    this.$location.path('/projects');
+                });
+            });
+            
         }
 
         public changePage($event): void {

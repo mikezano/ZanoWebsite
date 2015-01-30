@@ -77,6 +77,36 @@
     <Content Include="css\helpers\helperVars.min.css">
       <DependentUpon>helperVars.css</DependentUpon>
     </Content>
+    <Content Include="css\mainModule\mainModule.css">
+      <DependentUpon>mainModule.scss</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModule.min.css">
+      <DependentUpon>mainModule.css</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleContent.css">
+      <DependentUpon>mainModuleContent.scss</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleContent.min.css">
+      <DependentUpon>mainModuleContent.css</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleCurtains.css">
+      <DependentUpon>mainModuleCurtains.scss</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleCurtains.min.css">
+      <DependentUpon>mainModuleCurtains.css</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleMenu.css">
+      <DependentUpon>mainModuleMenu.scss</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleMenu.min.css">
+      <DependentUpon>mainModuleMenu.css</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleTriangles.css">
+      <DependentUpon>mainModuleTriangles.scss</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleTriangles.min.css">
+      <DependentUpon>mainModuleTriangles.css</DependentUpon>
+    </Content>
     <Content Include="css\site.css">
       <DependentUpon>site.scss</DependentUpon>
     </Content>
@@ -135,6 +165,23 @@
     </Content>
     <Content Include="css\mainModule\mainModuleTriangles.scss" />
     <Content Include="css\mainModule\mainModuleCurtains.scss" />
+    <Content Include="css\mainModule\mainModule.css.map">
+      <DependentUpon>mainModule.css</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleTriangles.css.map">
+      <DependentUpon>mainModuleTriangles.css</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleCurtains.css.map">
+      <DependentUpon>mainModuleCurtains.css</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleMenu.scss" />
+    <Content Include="css\mainModule\mainModuleMenu.css.map">
+      <DependentUpon>mainModuleMenu.css</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleContent.scss" />
+    <Content Include="css\mainModule\mainModuleContent.css.map">
+      <DependentUpon>mainModuleContent.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\zano.pubxml" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />
@@ -155,6 +202,7 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="scripts\npm.js" />
+    <Content Include="views\allProjects.html" />
     <Content Include="views\css3.html" />
     <Content Include="views\header.html" />
     <Content Include="views\home.html" />
@@ -177,6 +225,7 @@
     <TypeScriptCompile Include="app\controllers\css3ExperimentsController.ts" />
     <TypeScriptCompile Include="app\controllers\homeController.ts" />
     <TypeScriptCompile Include="app\controllers\impressController.ts" />
+    <TypeScriptCompile Include="app\controllers\projectsController.ts" />
     <TypeScriptCompile Include="app\controllers\state1.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-cookies.d.ts" />

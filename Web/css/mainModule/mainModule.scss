@@ -13,7 +13,6 @@
     &.animate-in{
         @include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, forwards);
     }
-    //@include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, null);
 
     &.spin{
         @include customAnimationFrames(spinZanoContainer, 5000ms, $quick-ease-in, infinite, null, null);
@@ -23,8 +22,6 @@
         @include customAnimationFrames(zoomZanoContainer, 1000ms, $quick-ease-in, 1, null, forwards);
     }
 }
-@import '../helpers/helperMixins.scss';
-
 
 @include customKeyFrames(zanoContainer){
     50%{          
@@ -57,15 +54,10 @@
 @include customKeyFrames(zoomZanoContainer) {
     0%{     
     @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
-   opacity:1;
-    }
-    50% {
-    @include setSizeAndPosition(100%, 100%, absolute, 0, 0, 0, 0, 0);
     opacity:1;
-
     }
     100%{
         @include setSizeAndPosition(100%, 100%, absolute, 0, 0, 0, 0, 0);
-        opacity:1;
+        opacity:0;
     }
 }

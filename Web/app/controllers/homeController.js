@@ -66,9 +66,12 @@
             };
 
             HomeController.prototype.changeUrl = function () {
-                console.log('change');
-                console.log(this.$location.path());
-                this.$location.path('/projects');
+                var _this = this;
+                this.$animate.addClass($('#zano-container'), 'zoomOut').then(function () {
+                    _this.$scope.$apply(function () {
+                        _this.$location.path('/projects');
+                    });
+                });
             };
 
             HomeController.prototype.changePage = function ($event) {
