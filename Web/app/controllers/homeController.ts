@@ -11,8 +11,8 @@ module Web.Client {
         public numbers: number[] = [];
         public projectNames: string[] = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Project 6', 'Project 7', 'Project 8', 'Project 9'];
 
-        public static $inject = ['$timeout', '$q', '$animate', '$scope'];
-        constructor(private $timeout: ng.ITimeoutService, private $q: ng.IQService, private $animate, private $scope) {
+        public static $inject = ['$timeout', '$q', '$animate', '$scope', '$location'];
+        constructor(private $timeout: ng.ITimeoutService, private $q: ng.IQService, private $animate, private $scope, private $location) {
             this.message = "Message from Home";
 
             this.animatePageLoad();
@@ -69,6 +69,12 @@ module Web.Client {
             $('#zano-container').toggleClass('zoomOut');
         }
 
+        public changeUrl(): void {
+            console.log('change');
+            console.log(this.$location.path());
+            this.$location.path('/projects');
+        }
+
         public changePage($event): void {
 
 
@@ -101,32 +107,6 @@ module Web.Client {
                 //});
             });
 
-//            $('#bottom-left-curtain').addClass('animate-in');
-//            $('#top-right-curtain').addClass('animate-in')
-//                .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', () => {
-//                    console.log('done');
-//                    console.log(this);
-//                    var nextPage = $($event.target).text();
-//                    console.log(nextPage);
-//                    switch (nextPage) {
-//                        case 'LINK1':
-//                            this.currentPage = "views/intro.html";
-//                            break;
-//                        case 'LINK2':
-//                            this.currentPage = "views/music.html";
-//                            break;
-//                        case 'LINK3':
-//                            this.currentPage = "views/resume.html";
-//                            break;
-//                        case 'PROJECTS':
-//                            this.currentPage = "views/projects.html";
-//                            break;
-//                    }
-//
-//
-//                    $('#bottom-left-curtain').removeClass('animate-in');
-//                    $('#top-right-curtain').removeClass('animate-in');
-//                });
         }
     }
 }

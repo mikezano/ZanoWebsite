@@ -4,6 +4,7 @@
 @import 'mainModule/mainModuleTriangles.scss';
 @import 'mainModule/mainModuleCurtains.scss';
 @import 'mainModule/mainModuleMenu.scss';
+@import 'mainModule/mainModuleContent.scss';
 
 
 //https://github.com/sass/libsass/issues/353
@@ -15,9 +16,6 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed; //makes it so that when you scroll, background will not
 }
-
-
-
 
 
 //.staggerAnimation.ng-enter,

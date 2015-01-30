@@ -5,11 +5,12 @@
     //https://www.youtube.com/watch?v=3hktBbxFxSM#t=69
     (function (Client) {
         var HomeController = (function () {
-            function HomeController($timeout, $q, $animate, $scope) {
+            function HomeController($timeout, $q, $animate, $scope, $location) {
                 this.$timeout = $timeout;
                 this.$q = $q;
                 this.$animate = $animate;
                 this.$scope = $scope;
+                this.$location = $location;
                 this.numbers = [];
                 this.projectNames = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Project 6', 'Project 7', 'Project 8', 'Project 9'];
                 this.message = "Message from Home";
@@ -64,6 +65,12 @@
                 $('#zano-container').toggleClass('zoomOut');
             };
 
+            HomeController.prototype.changeUrl = function () {
+                console.log('change');
+                console.log(this.$location.path());
+                this.$location.path('/projects');
+            };
+
             HomeController.prototype.changePage = function ($event) {
                 var _this = this;
                 var curtainsAnimate = [];
@@ -95,34 +102,8 @@
                     $('#top-right-curtain').removeClass('animate-in');
                     //});
                 });
-                //            $('#bottom-left-curtain').addClass('animate-in');
-                //            $('#top-right-curtain').addClass('animate-in')
-                //                .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', () => {
-                //                    console.log('done');
-                //                    console.log(this);
-                //                    var nextPage = $($event.target).text();
-                //                    console.log(nextPage);
-                //                    switch (nextPage) {
-                //                        case 'LINK1':
-                //                            this.currentPage = "views/intro.html";
-                //                            break;
-                //                        case 'LINK2':
-                //                            this.currentPage = "views/music.html";
-                //                            break;
-                //                        case 'LINK3':
-                //                            this.currentPage = "views/resume.html";
-                //                            break;
-                //                        case 'PROJECTS':
-                //                            this.currentPage = "views/projects.html";
-                //                            break;
-                //                    }
-                //
-                //
-                //                    $('#bottom-left-curtain').removeClass('animate-in');
-                //                    $('#top-right-curtain').removeClass('animate-in');
-                //                });
             };
-            HomeController.$inject = ['$timeout', '$q', '$animate', '$scope'];
+            HomeController.$inject = ['$timeout', '$q', '$animate', '$scope', '$location'];
             return HomeController;
         })();
         Client.HomeController = HomeController;

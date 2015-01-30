@@ -3,5 +3,6 @@
 <ul class="project-list">
     <li ng-repeat="name in vm.projectNames" 
         ng-style="{'padding-left': $index*50}"
+        ng-click="vm.changeUrl()"
         class="projectsStagger">{{name}}</li>
 </ul>
