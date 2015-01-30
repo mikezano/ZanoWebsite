@@ -68,6 +68,12 @@
     <Content Include="css\cssMixins.css">
       <DependentUpon>cssMixins.less</DependentUpon>
     </Content>
+    <Content Include="css\helperMixins.css">
+      <DependentUpon>helperMixins.scss</DependentUpon>
+    </Content>
+    <Content Include="css\helperMixins.min.css">
+      <DependentUpon>helperMixins.css</DependentUpon>
+    </Content>
     <Content Include="css\home.css">
       <DependentUpon>home.less</DependentUpon>
     </Content>
@@ -136,6 +142,12 @@
     <Content Include="css\homeS.css.map">
       <DependentUpon>homeS.css</DependentUpon>
     </Content>
+    <Content Include="css\mainModule.scss" />
+    <Content Include="css\helperMixins.scss" />
+    <Content Include="css\helperMixins.css.map">
+      <DependentUpon>helperMixins.css</DependentUpon>
+    </Content>
+    <Content Include="css\helperVars.scss" />
     <None Include="Properties\PublishProfiles\zano.pubxml" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />

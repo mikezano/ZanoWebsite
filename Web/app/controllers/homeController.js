@@ -60,6 +60,10 @@
                 $('#zano-container').toggleClass('spin');
             };
 
+            HomeController.prototype.startZoomOut = function () {
+                $('#zano-container').toggleClass('zoomOut');
+            };
+
             HomeController.prototype.changePage = function ($event) {
                 var _this = this;
                 var curtainsAnimate = [];

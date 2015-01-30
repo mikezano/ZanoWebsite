@@ -65,6 +65,10 @@ module Web.Client {
             $('#zano-container').toggleClass('spin');
         }
 
+        public startZoomOut(): void {
+            $('#zano-container').toggleClass('zoomOut');
+        }
+
         public changePage($event): void {
 
 

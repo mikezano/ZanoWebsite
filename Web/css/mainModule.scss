@@ -1,0 +1,50 @@
+﻿
+#zano-container{
+
+    @include setSizeAndPosition(400px, 10px, absolute, 50%, 300px, null, null, -1 * 200px);
+    opacity:0;
+    background: linear-gradient($colorBlue, $colorBlueDarken1);
+    border:1px solid $colorBlueLighten1;
+    box-shadow:10px 10px 10px $baseVSBlack;
+    overflow:hidden;
+
+    &.animate-in{
+        @include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, forwards);
+    }
+    //@include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, null);
+
+    &.spin{
+        @include customAnimationFrames(spinZanoContainer, 5000ms, $quick-ease-in, infinite, null, null);
+    }
+
+    &.zoomOut{
+        @include customAnimationFrames(zoomZanoContainer, 1000ms, $quick-ease-in, 1, null, forwards);
+    }
+}
+
+@include customKeyFrames(zanoContainer){
+    50%{          
+        @include setSizeAndPosition($mainContainerWidth, 10px, null, null, 300px, null, null, -1 * 300px);
+    }
+    100%{
+        @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
+        opacity:1;
+    }
+}
+
+@include customKeyFrames(spinZanoContainer) {
+    0%{        
+        @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
+        opacity:1;
+    }
+    100% {
+                @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
+
+        -moz-transform: rotateY(360deg);
+        -ms-transform: rotateY(360deg);
+        -o-transform: rotateY(360deg);
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+        opacity:1;
+    }
+}
