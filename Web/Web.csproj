@@ -65,29 +65,20 @@
     <Content Include="content\bootstrap-theme.min.css" />
     <Content Include="content\bootstrap.css" />
     <Content Include="content\bootstrap.min.css" />
-    <Content Include="css\cssMixins.css">
-      <DependentUpon>cssMixins.less</DependentUpon>
-    </Content>
-    <Content Include="css\helperMixins.css">
+    <Content Include="css\helpers\helperMixins.css">
       <DependentUpon>helperMixins.scss</DependentUpon>
     </Content>
-    <Content Include="css\helperMixins.min.css">
+    <Content Include="css\helpers\helperMixins.min.css">
       <DependentUpon>helperMixins.css</DependentUpon>
     </Content>
-    <Content Include="css\home.css">
-      <DependentUpon>home.less</DependentUpon>
+    <Content Include="css\helpers\helperVars.css">
+      <DependentUpon>helperVars.scss</DependentUpon>
     </Content>
-    <Content Include="css\home.min.css">
-      <DependentUpon>home.css</DependentUpon>
-    </Content>
-    <Content Include="css\homeS.css">
-      <DependentUpon>homeS.scss</DependentUpon>
-    </Content>
-    <Content Include="css\homeS.min.css">
-      <DependentUpon>homeS.css</DependentUpon>
+    <Content Include="css\helpers\helperVars.min.css">
+      <DependentUpon>helperVars.css</DependentUpon>
     </Content>
     <Content Include="css\site.css">
-      <DependentUpon>site.less</DependentUpon>
+      <DependentUpon>site.scss</DependentUpon>
     </Content>
     <Content Include="css\site.min.css">
       <DependentUpon>site.css</DependentUpon>
@@ -122,15 +113,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\bootstrap-theme.css.map" />
     <Content Include="content\bootstrap.css.map" />
-    <Content Include="css\site.less" />
-    <Content Include="css\site.css.map">
-      <DependentUpon>site.css</DependentUpon>
-    </Content>
-    <Content Include="css\home.less" />
-    <Content Include="css\home.css.map">
-      <DependentUpon>home.css</DependentUpon>
-    </Content>
-    <Content Include="css\cssMixins.less" />
     <Content Include="fonts\Spac3_neon free promo.ttf" />
     <Content Include="fonts\Dubtronic-Inline.otf" />
     <Content Include="fonts\Dubtronic-Solid.otf" />
@@ -138,16 +120,21 @@
     <Content Include="fonts\orbitron-bold.otf" />
     <Content Include="fonts\orbitron-light.otf" />
     <Content Include="fonts\orbitron-medium.otf" />
-    <Content Include="css\homeS.scss" />
-    <Content Include="css\homeS.css.map">
-      <DependentUpon>homeS.css</DependentUpon>
+    <Content Include="css\site.scss" />
+    <Content Include="css\site.css.map">
+      <DependentUpon>site.css</DependentUpon>
     </Content>
-    <Content Include="css\mainModule.scss" />
-    <Content Include="css\helperMixins.scss" />
-    <Content Include="css\helperMixins.css.map">
+    <Content Include="css\mainModule\mainModule.scss" />
+    <Content Include="css\helpers\helperMixins.scss" />
+    <Content Include="css\helpers\helperMixins.css.map">
       <DependentUpon>helperMixins.css</DependentUpon>
     </Content>
-    <Content Include="css\helperVars.scss" />
+    <Content Include="css\helpers\helperVars.scss" />
+    <Content Include="css\helpers\helperVars.css.map">
+      <DependentUpon>helperVars.css</DependentUpon>
+    </Content>
+    <Content Include="css\mainModule\mainModuleTriangles.scss" />
+    <Content Include="css\mainModule\mainModuleCurtains.scss" />
     <None Include="Properties\PublishProfiles\zano.pubxml" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />

@@ -1,4 +1,6 @@
-﻿
+﻿@import '../helpers/helperMixins.scss';
+@import '../helpers/helperVars.scss';
+
 #zano-container{
 
     @include setSizeAndPosition(400px, 10px, absolute, 50%, 300px, null, null, -1 * 200px);
@@ -21,6 +23,8 @@
         @include customAnimationFrames(zoomZanoContainer, 1000ms, $quick-ease-in, 1, null, forwards);
     }
 }
+@import '../helpers/helperMixins.scss';
+
 
 @include customKeyFrames(zanoContainer){
     50%{          
@@ -45,6 +49,23 @@
         -o-transform: rotateY(360deg);
         -webkit-transform: rotateY(360deg);
         transform: rotateY(360deg);
+        opacity:1;
+    }
+}
+
+
+@include customKeyFrames(zoomZanoContainer) {
+    0%{     
+    @include setSizeAndPosition($mainContainerWidth, $mainContainerHeight, absolute, 50%, 100px, null, null, -1 * $mainContainerWidth/2);
+   opacity:1;
+    }
+    50% {
+    @include setSizeAndPosition(100%, 100%, absolute, 0, 0, 0, 0, 0);
+    opacity:1;
+
+    }
+    100%{
+        @include setSizeAndPosition(100%, 100%, absolute, 0, 0, 0, 0, 0);
         opacity:1;
     }
 }

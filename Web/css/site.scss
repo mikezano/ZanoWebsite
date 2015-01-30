@@ -1,0 +1,102 @@
+﻿@import 'helpers/helperVars.scss';
+@import 'helpers/helperMixins.scss';
+@import 'mainModule/mainModule.scss';
+@import 'mainModule/mainModuleTriangles.scss';
+@import 'mainModule/mainModuleCurtains.scss';
+@import 'mainModule/mainModuleMenu.scss';
+
+
+//https://github.com/sass/libsass/issues/353
+
+body{
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(#303030, #444444 45%,  #444444 55%, #303030 );
+    height:100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; //makes it so that when you scroll, background will not
+}
+
+
+
+
+
+//.staggerAnimation.ng-enter,
+//.staggerAnimation.ng-leave,
+//.staggerAnimation.ng-move {
+//  -webkit-transition:0.5s cubic-bezier(.08,.84,.48,.99) all;
+//  transition:0.5s cubic-bezier(.08,.84,.48,.99) all;
+//}
+
+
+//.staggerAnimation.ng-enter-stagger {
+  /* 50ms between each item being animated after the other */
+ // -webkit-transition-delay:200ms;
+  //transition-delay:200ms;
+
+  /* this is required here to prevent any CSS inheritance issues */
+ // -webkit-transition-duration:0;
+  //transition-duration:0;
+//}
+
+
+/* ending enter and move styling
+   (this is what the element will animate from */
+//.staggerAnimation.ng-enter{ 
+//    opacity:0; 
+//    margin-left:-10px;
+//}
+
+/* ending enter and move styling
+   (this is what the element will animate towards */
+//.staggerAnimation.ng-enter.ng-enter-active { 
+//    opacity:1; 
+//    margin-left:0px;
+//}
+
+/* starting leave animation */
+//.staggerAnimation.ng-leave { opacity:0; }
+
+/* ending leave animation */
+//.staggerAnimation.ng-leave.ng-leave-active { opacity:0; }
+
+/*.random-numbers li{color:white;}
+
+.projectsStagger.ng-enter {
+    -moz-transition: 0.5s $quick-ease-in all;
+    -o-transition: 0.5s $quick-ease-in all;
+    -webkit-transition: 0.5s $quick-ease-in all;
+    transition: 0.5s $quick-ease-in all;
+    opacity:0;
+    margin-left:-10px;
+}
+
+.projectsStagger.ng-enter-stagger{
+    transition-delay:100ms;
+    transition-duration:0;
+}
+
+.projectsStagger.ng-enter.ng-enter-active{
+    opacity:1;
+    margin-left:0;
+}
+
+.project-list{ 
+    list-style-type:none;
+    padding:0;
+    & li{height:50px;}
+}
+
+#perspective-container{
+    perspective:1000px;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+}
+
+#buttons-container{
+    position:relative;
+    z-index:1000;
+}*/
+

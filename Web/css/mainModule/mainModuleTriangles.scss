@@ -1,0 +1,85 @@
+﻿@import '../helpers/helperVars.scss';
+@import '../helpers/helperMixins.scss';
+
+$triangleSize:300px;
+#bottom-left-triangle{
+
+    @include setSizeAndPosition(
+        $triangleSize, 
+        $triangleSize, 
+        absolute, 
+        -1 *$triangleSize, 
+        null, 
+        null, 
+        -1 *$triangleSize, 
+        null
+    );
+
+    background: linear-gradient(
+        45deg, 
+        #303030, 
+        $colorBlueDarken2 20%,  
+        $colorBlueDarken1 49%, 
+        $colorBlueLighten1 50%, 
+        rgba(0,0,0,0) 50%, 
+        rgba(0,0,0,0)
+    );
+    
+    &.animate-in{
+        @include customAnimationFrames(
+            bottom-left-triangle, 
+            $triangle-animation-time, 
+            $quick-ease-in, 
+            1, 
+            null, 
+            forwards
+        );
+    }
+}
+
+@include customKeyFrames(bottom-left-triangle){
+    100%{
+        left:0;
+        bottom:0;
+    }
+}
+
+#top-right-triangle {
+    @include setSizeAndPosition(
+        $triangleSize, 
+        $triangleSize, 
+        absolute, 
+        null, 
+        -1 *$triangleSize, 
+        -1 * $triangleSize, 
+        null, 
+        null
+    );
+    background: linear-gradient(
+        45deg, 
+        rgba(0,0,0,0),
+        rgba(0,0,0,0) 50%, 
+        $colorBlueLighten1 50%, 
+        $colorBlueDarken1 51%, 
+        $colorBlueDarken2 80%, 
+        #303030
+    );
+   
+    &.animate-in{
+        @include customAnimationFrames(
+            top-right-triangle, 
+            $triangle-animation-time, 
+            $quick-ease-in, 
+            1, 
+            null, 
+            forwards
+        );
+    }   
+}
+
+@include customKeyFrames(top-right-triangle){
+    100%{
+        top:0;
+        right:0;
+    }
+}

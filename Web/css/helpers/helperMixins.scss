@@ -70,15 +70,7 @@
         -webkit-animation-fill-mode: $fillMode;
         animation-fill-mode: $fillMode;
     }
-    /*@at-root{
-        @keyframes #{$name}{
-            @content;
-        }
 
-        @-webkit-keyframes #{$name}{
-            @content;
-        }
-    }*/
 }
 
 @mixin customKeyFrames($name){
