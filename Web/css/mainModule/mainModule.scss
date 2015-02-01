@@ -60,3 +60,21 @@
         opacity:0;
     }
 }
+
+#selected-project{   
+    position:absolute;
+    z-index:1000;
+    &.present-project{
+        @include customAnimationFrames(present-project, 5000ms, $quick-ease-in, 1, null, forwards);
+    }
+}
+
+@include customKeyFrames(present-project){
+    50%{
+        left:0;
+    }
+    100%{
+        left:0;
+        top:0;
+    }
+}

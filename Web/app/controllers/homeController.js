@@ -67,11 +67,17 @@
                 $('#zano-container').toggleClass('zoomOut');
             };
 
-            HomeController.prototype.changeUrl = function () {
+            HomeController.prototype.changeUrl = function (nextUrl, event) {
                 var _this = this;
+                var selectedElement = $(event.target);
+                var offset = selectedElement.offset();
+                $("#selected-project").css({ left: offset.left, top: offset.top });
+                console.log(nextUrl);
+                this.selectedProject = nextUrl;
                 this.$animate.addClass($('#zano-container'), 'zoomOut').then(function () {
                     _this.$scope.$apply(function () {
-                        _this.$location.path('/projects');
+                        // this.$location.path('/projects');
+                        _this.$animate.addClass($('#selected-project'), 'present-project');
                     });
                 });
             };

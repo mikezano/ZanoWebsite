@@ -9,6 +9,7 @@ module Web.Client {
         public currentPage: string;
         private el: Element;
         public numbers: number[] = [];
+        public selectedProject: string;
         public projectNames: string[] = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Project 6', 'Project 7', 'Project 8', 'Project 9'];
 
         public static $inject = ['$timeout', '$q', '$animate', '$scope', '$location'];
@@ -71,13 +72,18 @@ module Web.Client {
             $('#zano-container').toggleClass('zoomOut');
         }
 
-        public changeUrl(): void {
+        public changeUrl(nextUrl: string, event: any): void {
+            var selectedElement: JQuery = $(event.target);
+            var offset = selectedElement.offset();
+            $("#selected-project").css({ left: offset.left, top: offset.top });
+            console.log(nextUrl);
+            this.selectedProject = nextUrl;
             this.$animate.addClass($('#zano-container'), 'zoomOut').then(() => {
                 this.$scope.$apply(() => {
-                    this.$location.path('/projects');
+                    // this.$location.path('/projects');
+                    this.$animate.addClass($('#selected-project'), 'present-project');
                 });
-            });
-            
+            });            
         }
 
         public changePage($event): void {
