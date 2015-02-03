@@ -78,12 +78,29 @@ module Web.Client {
             $("#selected-project").css({ left: offset.left, top: offset.top });
             console.log(nextUrl);
             this.selectedProject = nextUrl;
-            this.$animate.addClass($('#zano-container'), 'zoomOut').then(() => {
-                this.$scope.$apply(() => {
-                    // this.$location.path('/projects');
-                    this.$animate.addClass($('#selected-project'), 'present-project');
-                });
-            });            
+
+            var animations: ng.IPromise<void>[] = [];
+            animations.push(this.$animate.addClass($('#zano-container'), 'zoomOut'));
+            animations.push(this.$animate.addClass($('#selected-project'), 'present-project-left'));
+            this.$q.all(animations).then(() => {
+                var moveUp: ng.IPromise<void>[] = [];
+                    console.log("h");
+                    moveUp.push(this.$animate.addClass($('#selected-project'), 'present-project-up'));
+             
+                return this.$q.all(moveUp);
+            }).then(() => {
+                this.$location.path('/projects');      
+            });
+            //this.$animate.addClass($('#zano-container'), 'zoomOut').then(() => {
+            //    this.$scope.$apply(() => {
+            //        // 
+            //        this.$animate.addClass($('#selected-project'), 'present-project-left').then(() => {
+            //            this.$scope.$apply(() => {
+            //                this.$animate.addClass($('#selected-project'), 'present-project-up');
+            //            });
+            //        });
+            //    });
+            //});            
         }
 
         public changePage($event): void {

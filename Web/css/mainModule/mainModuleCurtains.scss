@@ -34,7 +34,10 @@ $curtain_size:400px;
 }
 
 @include customKeyFrames(open-left-curtain){
-    100%{left:-500px;}
+    100%{
+        left:-500px;
+        z-index:-1;
+    }
 }
 
 @include customKeyFrames(close-left-curtain){
@@ -64,7 +67,10 @@ $curtain_size:400px;
     }
 }
 @include customKeyFrames(open-right-curtain){
-    100%{right:-500px;}
+    100%{
+        right:-500px;
+        z-index:-1;
+    }
 }
 
 @include customKeyFrames(close-right-curtain){

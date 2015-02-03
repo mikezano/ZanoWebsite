@@ -64,17 +64,29 @@
 #selected-project{   
     position:absolute;
     z-index:1000;
-    &.present-project{
-        @include customAnimationFrames(present-project, 5000ms, $quick-ease-in, 1, null, forwards);
+    &.present-project-left{
+        @include customAnimationFrames(present-project-left, 500ms, $quick-ease-in, 1, null, forwards);
+    }
+    &.present-project-up{
+        @include customAnimationFrames(present-project-up, 500ms, $quick-ease-in, 1, null, forwards);
     }
 }
 
-@include customKeyFrames(present-project){
-    50%{
+@include customKeyFrames(present-project-left){
+    100%{
+        left:0;
+    }
+}
+
+
+@include customKeyFrames(present-project-up){
+    0%{
         left:0;
     }
     100%{
         left:0;
         top:0;
+        font-size:36px;
+        margin-top:20px;
     }
 }

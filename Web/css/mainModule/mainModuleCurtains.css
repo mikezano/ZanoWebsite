@@ -49,11 +49,13 @@
 
 @keyframes open-left-curtain {
   100% {
-    left: -500px; } }
+    left: -500px;
+    z-index: -1; } }
 
 @-webkit-keyframes open-left-curtain {
   100% {
-    left: -500px; } }
+    left: -500px;
+    z-index: -1; } }
 
 @keyframes close-left-curtain {
   0% {
@@ -120,11 +122,13 @@
 
 @keyframes open-right-curtain {
   100% {
-    right: -500px; } }
+    right: -500px;
+    z-index: -1; } }
 
 @-webkit-keyframes open-right-curtain {
   100% {
-    right: -500px; } }
+    right: -500px;
+    z-index: -1; } }
 
 @keyframes close-right-curtain {
   0% {

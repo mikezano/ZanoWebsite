@@ -157,30 +157,51 @@
 #selected-project {
   position: absolute;
   z-index: 1000; }
-  #selected-project.present-project {
-    -moz-animation: present-project 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -o-animation: present-project 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -webkit-animation: present-project 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    animation: present-project 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  #selected-project.present-project-left {
+    -moz-animation: present-project-left 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: present-project-left 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: present-project-left 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: present-project-left 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  #selected-project.present-project-up {
+    -moz-animation: present-project-up 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: present-project-up 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: present-project-up 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: present-project-up 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards; }
 
-@keyframes present-project {
-  50% {
+@keyframes present-project-left {
+  100% {
+    left: 0; } }
+
+@-webkit-keyframes present-project-left {
+  100% {
+    left: 0; } }
+
+@keyframes present-project-up {
+  0% {
     left: 0; }
 
   100% {
     left: 0;
-    top: 0; } }
+    top: 0;
+    font-size: 36px;
+    margin-top: 20px; } }
 
-@-webkit-keyframes present-project {
-  50% {
+@-webkit-keyframes present-project-up {
+  0% {
     left: 0; }
 
   100% {
     left: 0;
-    top: 0; } }
+    top: 0;
+    font-size: 36px;
+    margin-top: 20px; } }
 
 /*# sourceMappingURL=mainModule.css.map */
