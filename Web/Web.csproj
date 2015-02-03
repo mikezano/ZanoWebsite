@@ -107,6 +107,9 @@
     <Content Include="css\mainModule\mainModuleTriangles.min.css">
       <DependentUpon>mainModuleTriangles.css</DependentUpon>
     </Content>
+    <Content Include="css\site-demo.css">
+      <DependentUpon>site-demo.scss</DependentUpon>
+    </Content>
     <Content Include="css\site.css">
       <DependentUpon>site.scss</DependentUpon>
     </Content>
@@ -183,6 +186,10 @@
       <DependentUpon>mainModuleContent.css</DependentUpon>
     </Content>
     <Content Include="css\projectsController\projectsController.scss" />
+    <Content Include="css\site-demo.scss" />
+    <Content Include="css\site-demo.css.map">
+      <DependentUpon>site-demo.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\zano.pubxml" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />

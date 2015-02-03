@@ -449,43 +449,6 @@ body {
 #content {
   color: white; }
 
-.project-name.ng-enter {
-  -moz-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
-  -o-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
-  -webkit-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
-  transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
-  opacity: 0;
-  margin-left: -10px; }
-
-.project-name.ng-enter-stagger {
-  transition-delay: 100ms;
-  transition-duration: 0; }
-
-.project-name.ng-enter.ng-enter-active {
-  opacity: 1;
-  margin-left: 0; }
-
-/*
-//Backup
-    .project-name.ng-enter {
-    -moz-transition: .5s linear all;
-    -o-transition: .5s linear all;
-    -webkit-transition: .5s linear all;
-    transition: .5s linear all;
-    opacity:0;
-    margin-left:-40px;
-}
-.project-name.ng-enter-stagger{
-
-    transition-delay:100ms;
-    transition-duration:0;
-}
-.project-name.ng-enter.ng-enter-active{
-    opacity:1;
-    margin-left:0;
-}
-
-*/
 .project-list {
   list-style-type: none;
   padding: 0; }
@@ -504,4 +467,4 @@ body {
   position: relative;
   z-index: 1000; }
 
-/*# sourceMappingURL=site.css.map */
+/*# sourceMappingURL=site-demo.css.map */
