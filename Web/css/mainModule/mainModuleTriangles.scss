@@ -14,6 +14,7 @@ $triangleSize:300px;
         -1 *$triangleSize, 
         null
     );
+    z-index:-1;
 
     background: linear-gradient(
         45deg, 
@@ -55,6 +56,9 @@ $triangleSize:300px;
         null, 
         null
     );
+
+    z-index:-1;
+
     background: linear-gradient(
         45deg, 
         rgba(0,0,0,0),

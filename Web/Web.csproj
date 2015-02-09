@@ -110,6 +110,9 @@
     <Content Include="css\site-demo.css">
       <DependentUpon>site-demo.scss</DependentUpon>
     </Content>
+    <Content Include="css\site-demo.min.css">
+      <DependentUpon>site-demo.css</DependentUpon>
+    </Content>
     <Content Include="css\site.css">
       <DependentUpon>site.scss</DependentUpon>
     </Content>

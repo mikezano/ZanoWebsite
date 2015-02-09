@@ -9,6 +9,7 @@
     border:1px solid $colorBlueLighten1;
     box-shadow:10px 10px 10px $baseVSBlack;
     overflow:hidden;
+    z-index:0;
 
     &.animate-in{
         @include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, forwards);
@@ -19,7 +20,7 @@
     }
 
     &.zoomOut{
-        @include customAnimationFrames(zoomZanoContainer, 1000ms, $quick-ease-in, 1, null, forwards);
+        @include customAnimationFrames(zoomZanoContainer, 500ms, $quick-ease-in, 1, null, forwards);
     }
 }
 
@@ -62,6 +63,8 @@
 }
 
 #selected-project{   
+    font-size:14px;
+    margin-top:2px;
     position:absolute;
     z-index:1000;
     &.present-project-left{
@@ -82,11 +85,13 @@
 @include customKeyFrames(present-project-up){
     0%{
         left:0;
+
     }
     100%{
         left:0;
         top:0;
         font-size:36px;
         margin-top:20px;
+        padding:0;
     }
 }

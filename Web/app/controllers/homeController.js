@@ -71,8 +71,9 @@
                 var _this = this;
                 var selectedElement = $(event.target);
                 var offset = selectedElement.offset();
-                $("#selected-project").css({ left: offset.left, top: offset.top });
-                console.log(nextUrl);
+                console.log(selectedElement.css('paddingLeft'));
+                $("#selected-project").css({ left: offset.left + parseInt(selectedElement.css('paddingLeft')), top: offset.top });
+
                 this.selectedProject = nextUrl;
 
                 var animations = [];
@@ -87,16 +88,16 @@
                 }).then(function () {
                     _this.$location.path('/projects');
                 });
-                //this.$animate.addClass($('#zano-container'), 'zoomOut').then(() => {
-                //    this.$scope.$apply(() => {
-                //        //
-                //        this.$animate.addClass($('#selected-project'), 'present-project-left').then(() => {
-                //            this.$scope.$apply(() => {
-                //                this.$animate.addClass($('#selected-project'), 'present-project-up');
-                //            });
-                //        });
-                //    });
-                //});
+                this.$animate.addClass($('#zano-container'), 'zoomOut').then(function () {
+                    _this.$scope.$apply(function () {
+                        //
+                        _this.$animate.addClass($('#selected-project'), 'present-project-left').then(function () {
+                            _this.$scope.$apply(function () {
+                                _this.$animate.addClass($('#selected-project'), 'present-project-up');
+                            });
+                        });
+                    });
+                });
             };
 
             HomeController.prototype.changePage = function ($event) {
