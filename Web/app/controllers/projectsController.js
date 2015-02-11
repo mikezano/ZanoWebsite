@@ -6,53 +6,49 @@
                 this.$q = $q;
                 this.$animate = $animate;
                 this.$scope = $scope;
+                this.middlePanelMoveLeft = 'middle-panel-move-left';
+                this.middlePanelMoveRight = 'middle-panel-move-right';
+                this.rightPanelMoveLeft = 'right-panel-move-left';
+                this.leftPanelMoveRight = 'left-panel-move-right';
+                this.middlePanel = $('#middle-panel');
+                this.leftPanel = $('#left-panel');
+                this.rightPanel = $('#right-panel');
             }
             ProjectsController.prototype.movePanels = function () {
                 var _this = this;
                 console.log("hey");
 
                 var animatePanels = [];
-                animatePanels.push(this.$animate.addClass($('#middle-panel'), 'middle-panel-move-left'));
-                animatePanels.push(this.$animate.addClass($('#right-panel'), 'right-panel-move-left'));
+                animatePanels.push(this.$animate.addClass(this.middlePanel, this.middlePanelMoveLeft));
+                animatePanels.push(this.$animate.addClass(this.rightPanel, this.rightPanelMoveLeft));
 
                 this.$q.all(animatePanels).then(function () {
-                    console.log("Next thing");
-                    _this.$animate.removeClass($('#middle-panel'), 'middle-panel-move-left');
-                    _this.$animate.removeClass($('#right-panel'), 'right-panel-move-left');
+                    _this.$animate.removeClass(_this.middlePanel, _this.middlePanelMoveLeft);
+                    _this.$animate.removeClass(_this.rightPanel, _this.rightPanelMoveLeft);
                 });
-                //this.$animate.addClass($('#middle-panel'), 'middle-panel-move-left').then(() => {
-                //    this.$scope.$apply(() => {
-                //        this.$animate.addClass($('#right-panel'), 'right-panel-move-left').then(() => {
-                //            this.$animate.removeClass($('#middle-panel'), 'middle-panel-move-left');
-                //            this.$animate.removeClass($('#right-panel'), 'right-panel-move-left');
-                //        });
-                //    });
-                //});
             };
 
             ProjectsController.prototype.movePanelsLeft = function () {
                 var _this = this;
                 var animatePanelsLeft = [];
-                animatePanelsLeft.push(this.$animate.addClass($('#middle-panel'), 'middle-panel-move-left'));
-                animatePanelsLeft.push(this.$animate.addClass($('#right-panel'), 'right-panel-move-left'));
+                animatePanelsLeft.push(this.$animate.addClass(this.middlePanel, this.middlePanelMoveLeft));
+                animatePanelsLeft.push(this.$animate.addClass(this.rightPanel, this.rightPanelMoveLeft));
 
                 this.$q.all(animatePanelsLeft).then(function () {
-                    console.log("Next thing");
-                    _this.$animate.removeClass($('#middle-panel'), 'middle-panel-move-left');
-                    _this.$animate.removeClass($('#right-panel'), 'right-panel-move-left');
+                    _this.$animate.removeClass(_this.middlePanel, _this.middlePanelMoveLeft);
+                    _this.$animate.removeClass(_this.rightPanel, _this.rightPanelMoveLeft);
                 });
             };
 
             ProjectsController.prototype.movePanelsRight = function () {
                 var _this = this;
                 var animatePanelsRight = [];
-                animatePanelsRight.push(this.$animate.addClass($('#middle-panel'), 'middle-panel-move-right'));
-                animatePanelsRight.push(this.$animate.addClass($('#left-panel'), 'left-panel-move-right'));
+                animatePanelsRight.push(this.$animate.addClass(this.middlePanel, this.middlePanelMoveRight));
+                animatePanelsRight.push(this.$animate.addClass(this.leftPanel, this.leftPanelMoveRight));
 
                 this.$q.all(animatePanelsRight).then(function () {
-                    console.log("Next thing");
-                    animatePanelsRight.push(_this.$animate.removeClass($('#middle-panel'), 'middle-panel-move-right'));
-                    animatePanelsRight.push(_this.$animate.removeClass($('#left-panel'), 'left-panel-move-right'));
+                    animatePanelsRight.push(_this.$animate.removeClass(_this.middlePanel, _this.middlePanelMoveRight));
+                    animatePanelsRight.push(_this.$animate.removeClass(_this.leftPanel, _this.leftPanelMoveRight));
                 });
             };
             ProjectsController.$inject = ['$q', '$animate', '$scope'];
