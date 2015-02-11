@@ -1,0 +1,110 @@
+﻿#left-panel, #right-panel, #middle-panel, #left-panel-default, #right-panel-default {
+  position: absolute;
+  top: 100px;
+  width: 600px;
+  margin-left: -300px;
+  left: 50%;
+  height: 400px; }
+
+#left-panel, #right-panel, #left-panel-default, #right-panel-default {
+  top: 70px;
+  width: 600px; }
+
+#left-panel, #left-panel-default {
+  margin-left: -620px; }
+
+#right-panel, #right-panel-default {
+  margin-left: 20px; }
+
+#middle-panel.middle-panel-move-left {
+  -moz-animation: middle-panel-move-left 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -o-animation: middle-panel-move-left 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -webkit-animation: middle-panel-move-left 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  animation: middle-panel-move-left 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+#middle-panel.middle-panel-move-right {
+  -moz-animation: middle-panel-move-right 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -o-animation: middle-panel-move-right 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -webkit-animation: middle-panel-move-right 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  animation: middle-panel-move-right 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+#right-panel.right-panel-move-left {
+  -moz-animation: right-panel-move-left 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -o-animation: right-panel-move-left 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -webkit-animation: right-panel-move-left 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  animation: right-panel-move-left 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+#left-panel.left-panel-move-right {
+  -moz-animation: left-panel-move-right 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -o-animation: left-panel-move-right 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -webkit-animation: left-panel-move-right 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  animation: left-panel-move-right 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+@keyframes middle-panel-move-left {
+  100% {
+    top: 70px;
+    width: 600px;
+    margin-left: -620px; } }
+
+@-webkit-keyframes middle-panel-move-left {
+  100% {
+    top: 70px;
+    width: 600px;
+    margin-left: -620px; } }
+
+@keyframes middle-panel-move-right {
+  100% {
+    top: 70px;
+    width: 600px;
+    margin-left: 20px; } }
+
+@-webkit-keyframes middle-panel-move-right {
+  100% {
+    top: 70px;
+    width: 600px;
+    margin-left: 20px; } }
+
+@keyframes right-panel-move-left {
+  100% {
+    top: 100px;
+    width: 600px;
+    margin-left: -300px;
+    z-index: 100; } }
+
+@-webkit-keyframes right-panel-move-left {
+  100% {
+    top: 100px;
+    width: 600px;
+    margin-left: -300px;
+    z-index: 100; } }
+
+@keyframes left-panel-move-right {
+  100% {
+    top: 100px;
+    width: 600px;
+    margin-left: -300px;
+    z-index: 100; } }
+
+@-webkit-keyframes left-panel-move-right {
+  100% {
+    top: 100px;
+    width: 600px;
+    margin-left: -300px;
+    z-index: 100; } }
+
+/*# sourceMappingURL=projectsController.css.map */

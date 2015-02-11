@@ -43,22 +43,23 @@ body{
 
 /*
 //Backup
-    .project-name.ng-enter {
-    -moz-transition: .5s linear all;
-    -o-transition: .5s linear all;
-    -webkit-transition: .5s linear all;
-    transition: .5s linear all;
-    opacity:0;
-    margin-left:-40px;
-}
-.project-name.ng-enter-stagger{
+    .project-name{
 
-    transition-delay:100ms;
-    transition-duration:0;
-}
-.project-name.ng-enter.ng-enter-active{
-    opacity:1;
-    margin-left:0;
+    &.ng-enter{
+        transition: 0.5s $quick-ease-in  all;
+        opacity:0;
+        margin-left:-10px;
+
+        &.ng-enter-active{
+            opacity:1;
+            margin-left:0px;
+        }
+    }
+
+    &.ng-enter-stagger{
+        transition-delay: 100ms;
+        transition-duration:0;
+    }
 }
 
 */

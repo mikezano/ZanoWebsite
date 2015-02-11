@@ -1,2 +1,108 @@
-﻿body {
+﻿@import '../helpers/helperVars.scss';
+@import '../helpers/helperMixins.scss';
+
+$panels-width:600px;
+$panels-margin-left: -1 * $panels-width/2;
+$panels-gap:20px;
+
+#left-panel, #right-panel, #middle-panel, #left-panel-default, #right-panel-default{
+    position:absolute;
+    top:100px;
+    width:$panels-width;
+    margin-left:$panels-margin-left;
+    left: 50%;
+    height:400px;
+}
+
+#left-panel, #right-panel, #left-panel-default, #right-panel-default{
+    top:70px;
+    width:600px;
+   
+}
+#left-panel, #left-panel-default{
+    margin-left:$panels-margin-left - 300 - $panels-gap;
+}
+#right-panel, #right-panel-default{
+    margin-left:$panels-gap;
+}
+
+$panel-move-time:0.5s;
+#middle-panel{
+    &.middle-panel-move-left{
+        @include customAnimationFrames(
+            middle-panel-move-left, 
+            $panel-move-time, 
+            $quick-ease-in, 
+            1, 
+            null, 
+            forwards);
+    }
+
+    &.middle-panel-move-right{
+        @include customAnimationFrames(
+            middle-panel-move-right, 
+            $panel-move-time, 
+            $quick-ease-in, 
+            1, 
+            null, 
+            forwards);
+    }
+}
+
+#right-panel{
+    &.right-panel-move-left{
+        @include customAnimationFrames(
+            right-panel-move-left, 
+            $panel-move-time, 
+            $quick-ease-in, 
+            1, 
+            null, 
+            forwards);
+    }
+}
+
+#left-panel{
+    &.left-panel-move-right{
+        @include customAnimationFrames(
+            left-panel-move-right, 
+            $panel-move-time, 
+            $quick-ease-in, 
+            1, 
+            null, 
+            forwards);
+    }
+}
+
+@include customKeyFrames(middle-panel-move-left){
+    100%{
+        top:70px;
+        width:$panels-width;
+        margin-left:$panels-margin-left - 300 - $panels-gap;
+    }
+}
+
+@include customKeyFrames(middle-panel-move-right){
+    100%{
+        top:70px;
+        width:$panels-width;
+        margin-left:$panels-gap;
+    }
+}
+
+@include customKeyFrames(right-panel-move-left){
+    100%{
+        top:100px;
+        width:$panels-width;
+        margin-left:$panels-margin-left;
+        z-index:100;
+    }
+}
+
+@include customKeyFrames(left-panel-move-right){
+    100%{
+        top:100px;
+        width:$panels-width;
+        margin-left:$panels-margin-left;
+        z-index:100;
+    }
 }
