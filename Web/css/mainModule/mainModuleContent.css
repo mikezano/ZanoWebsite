@@ -4,6 +4,9 @@
     padding: 4px 10px;
     position: relative;
     z-index: 3;
+    -moz-transition: 2s cubic-bezier(0.19, 0.92, 0.23, 1) color;
+    -o-transition: 2s cubic-bezier(0.19, 0.92, 0.23, 1) color;
+    -webkit-transition: 2s cubic-bezier(0.19, 0.92, 0.23, 1) color;
     transition: 2s cubic-bezier(0.19, 0.92, 0.23, 1) color; }
     #current-page .project-name.ng-enter {
       -moz-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
@@ -16,7 +19,13 @@
         opacity: 1;
         margin-left: 0; }
     #current-page .project-name.ng-enter-stagger {
+      -moz-transition-delay: 100ms;
+      -o-transition-delay: 100ms;
+      -webkit-transition-delay: 100ms;
       transition-delay: 100ms;
+      -moz-transition-duration: 0;
+      -o-transition-duration: 0;
+      -webkit-transition-duration: 0;
       transition-duration: 0; }
     #current-page .project-name:hover {
       cursor: pointer;
