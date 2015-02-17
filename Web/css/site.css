@@ -25,10 +25,10 @@
     -webkit-animation: spinZanoContainer 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) infinite;
     animation: spinZanoContainer 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) infinite; }
   #zano-container.zoomOut {
-    -moz-animation: zoomZanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -o-animation: zoomZanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -webkit-animation: zoomZanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    animation: zoomZanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation: zoomZanoContainer 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: zoomZanoContainer 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: zoomZanoContainer 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: zoomZanoContainer 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
@@ -463,6 +463,27 @@
 
 #current-page {
   position: relative; }
+  #current-page .project-name {
+    padding: 4px 10px;
+    position: relative;
+    z-index: 3;
+    transition: 2s cubic-bezier(0.19, 0.92, 0.23, 1) color; }
+    #current-page .project-name.ng-enter {
+      -moz-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+      -o-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+      -webkit-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+      transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+      opacity: 0;
+      margin-left: -10px; }
+      #current-page .project-name.ng-enter.ng-enter-active {
+        opacity: 1;
+        margin-left: 0; }
+    #current-page .project-name.ng-enter-stagger {
+      transition-delay: 100ms;
+      transition-duration: 0; }
+    #current-page .project-name:hover {
+      cursor: pointer;
+      color: #00a0e5; }
 
 body {
   font-family: 'Orbitron', sans-serif;
@@ -474,49 +495,11 @@ body {
 #content {
   color: white; }
 
-.project-name.ng-enter {
-  -moz-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
-  -o-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
-  -webkit-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
-  transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
-  opacity: 0;
-  margin-left: -10px; }
-
-.project-name.ng-enter-stagger {
-  transition-delay: 100ms;
-  transition-duration: 0; }
-
-.project-name.ng-enter.ng-enter-active {
-  opacity: 1;
-  margin-left: 0; }
-
-/*
-//Backup
-    .project-name{
-
-    &.ng-enter{
-        transition: 0.5s $quick-ease-in  all;
-        opacity:0;
-        margin-left:-10px;
-
-        &.ng-enter-active{
-            opacity:1;
-            margin-left:0px;
-        }
-    }
-
-    &.ng-enter-stagger{
-        transition-delay: 100ms;
-        transition-duration:0;
-    }
-}
-
-*/
 .project-list {
   list-style-type: none;
   padding: 0; }
   .project-list li {
-    height: 50px; }
+    height: 30px; }
 
 #perspective-container {
   perspective: 1000px;

@@ -1,4 +1,25 @@
 ﻿#current-page {
   position: relative; }
+  #current-page .project-name {
+    padding: 4px 10px;
+    position: relative;
+    z-index: 3;
+    transition: 2s cubic-bezier(0.19, 0.92, 0.23, 1) color; }
+    #current-page .project-name.ng-enter {
+      -moz-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+      -o-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+      -webkit-transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+      transition: 0.5s cubic-bezier(0.19, 0.92, 0.23, 1) all;
+      opacity: 0;
+      margin-left: -10px; }
+      #current-page .project-name.ng-enter.ng-enter-active {
+        opacity: 1;
+        margin-left: 0; }
+    #current-page .project-name.ng-enter-stagger {
+      transition-delay: 100ms;
+      transition-duration: 0; }
+    #current-page .project-name:hover {
+      cursor: pointer;
+      color: #00a0e5; }
 
 /*# sourceMappingURL=mainModuleContent.css.map */

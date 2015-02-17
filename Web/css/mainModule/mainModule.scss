@@ -19,7 +19,7 @@
     }
 
     &.zoomOut{
-        @include customAnimationFrames(zoomZanoContainer, 1000ms, $quick-ease-in, 1, null, forwards);
+        @include customAnimationFrames(zoomZanoContainer, 500ms, $quick-ease-in, 1, null, forwards);
     }
 }
 

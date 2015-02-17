@@ -12,7 +12,7 @@
                 this.$scope = $scope;
                 this.$location = $location;
                 this.numbers = [];
-                this.projectNames = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Project 6', 'Project 7', 'Project 8', 'Project 9'];
+                this.projectNames = ['Panel Flipping', 'Rotation', 'Fireworks w/Web GL', 'Project 4', 'Project 5', 'Project 6', 'Project 7', 'Project 8', 'Project 9'];
                 this.message = "Message from Home";
 
                 this.animatePageLoad();
@@ -75,10 +75,10 @@
                 console.log(nextUrl);
                 this.selectedProject = nextUrl;
 
-                var animations = [];
-                animations.push(this.$animate.addClass($('#zano-container'), 'zoomOut'));
-                animations.push(this.$animate.addClass($('#selected-project'), 'present-project-left'));
-                this.$q.all(animations).then(function () {
+                this.$q.all([
+                    this.$animate.addClass($('#zano-container'), 'zoomOut'),
+                    this.$animate.addClass($('#selected-project'), 'present-project-left')
+                ]).then(function () {
                     var moveUp = [];
                     console.log("h");
                     moveUp.push(_this.$animate.addClass($('#selected-project'), 'present-project-up'));

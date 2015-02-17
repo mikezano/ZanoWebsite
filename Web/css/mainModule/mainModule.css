@@ -25,10 +25,10 @@
     -webkit-animation: spinZanoContainer 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) infinite;
     animation: spinZanoContainer 5000ms cubic-bezier(0.19, 0.92, 0.23, 1) infinite; }
   #zano-container.zoomOut {
-    -moz-animation: zoomZanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -o-animation: zoomZanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    -webkit-animation: zoomZanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
-    animation: zoomZanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation: zoomZanoContainer 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -o-animation: zoomZanoContainer 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -webkit-animation: zoomZanoContainer 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    animation: zoomZanoContainer 500ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;

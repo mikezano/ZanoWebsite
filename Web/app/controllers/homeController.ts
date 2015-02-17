@@ -10,7 +10,7 @@ module Web.Client {
         private el: Element;
         public numbers: number[] = [];
         public selectedProject: string;
-        public projectNames: string[] = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Project 6', 'Project 7', 'Project 8', 'Project 9'];
+        public projectNames: string[] = ['Panel Flipping', 'Rotation', 'Fireworks w/Web GL', 'Project 4', 'Project 5', 'Project 6', 'Project 7', 'Project 8', 'Project 9'];
 
         public static $inject = ['$timeout', '$q', '$animate', '$scope', '$location'];
         constructor(private $timeout: ng.ITimeoutService, private $q: ng.IQService, private $animate, private $scope, private $location) {
@@ -79,10 +79,10 @@ module Web.Client {
             console.log(nextUrl);
             this.selectedProject = nextUrl;
 
-            var animations: ng.IPromise<void>[] = [];
-            animations.push(this.$animate.addClass($('#zano-container'), 'zoomOut'));
-            animations.push(this.$animate.addClass($('#selected-project'), 'present-project-left'));
-            this.$q.all(animations).then(() => {
+            this.$q.all([
+                this.$animate.addClass($('#zano-container'), 'zoomOut'),
+                this.$animate.addClass($('#selected-project'), 'present-project-left')
+            ]).then(() => {
                 var moveUp: ng.IPromise<void>[] = [];
                     console.log("h");
                     moveUp.push(this.$animate.addClass($('#selected-project'), 'present-project-up'));

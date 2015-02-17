@@ -1,4 +1,37 @@
-﻿#current-page{
+﻿@import '../helpers/helperVars.scss';
+@import '../helpers/helperMixins.scss';
+
+#current-page{
     position:relative;
-    //z-index:2000;
+
+    .project-name{
+        padding:4px 10px;
+        position:relative;
+        z-index:3;
+        transition:2s $quick-ease-in color;
+
+        &.ng-enter{
+            -moz-transition: 0.5s $quick-ease-in all;
+            -o-transition: 0.5s $quick-ease-in all;
+            -webkit-transition: 0.5s $quick-ease-in all;
+            transition: 0.5s $quick-ease-in all;
+            opacity:0;
+            margin-left:-10px;
+
+            &.ng-enter-active{
+                opacity:1;
+                margin-left:0;
+            }
+        }
+
+        &.ng-enter-stagger{
+            transition-delay:100ms;
+            transition-duration:0;
+        }
+
+        &:hover{
+            cursor:pointer;
+            color:$colorBlueLighten2;
+        }
+    }
 }

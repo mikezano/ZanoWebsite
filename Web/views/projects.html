@@ -3,7 +3,7 @@
 
 <ul class="project-list">
     <li ng-repeat="name in vm.projectNames" 
-        ng-style="{'padding-left': $index*50}"
+        ng-style="{'left': $index*30}"
         ng-click="vm.changeUrl(name, $event)"
         class="project-name">{{name}}</li>
 </ul>
