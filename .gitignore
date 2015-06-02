@@ -15,12 +15,9 @@ x64/
 [Oo]bj/
 
 # Typescript JS and JS MAP FIles
-src/Web/App/**/*.js
-src/Web/App/**/*.js.map
-src/Web/Tests/**/*.js
-src/Web/Tests/**/*.js.map
-src/packages/
-src/Web/Content/*.min.css
+/**/*.js
+/**/*.js.map
+/**/packages/
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/
@@ -104,7 +101,7 @@ publish/
 
 # NuGet Packages Directory
 ## TODO: If you have NuGet Package Restore enabled, uncomment the next line
-#packages/
+packages/
 
 # Windows Azure Build Output
 csx

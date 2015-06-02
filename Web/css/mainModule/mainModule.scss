@@ -11,7 +11,7 @@
     overflow:hidden;
 
     &.animate-in{
-        @include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, null, forwards);
+        @include customAnimationFrames(zanoContainer, $zano-container-animation-time, $quick-ease-in, 1, 4s, forwards);
     }
 
     &.spin{

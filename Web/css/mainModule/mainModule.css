@@ -15,6 +15,10 @@
     -o-animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     -webkit-animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
     animation: zanoContainer 1000ms cubic-bezier(0.19, 0.92, 0.23, 1) 1;
+    -moz-animation-delay: 4s;
+    -o-animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
     -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;

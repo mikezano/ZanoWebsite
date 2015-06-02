@@ -45,23 +45,24 @@ module Web.Client {
         public animatePageLoad(): void {
             console.log("animate1");
             this.$animate.addClass($("#zano-container"), 'animate-in')
-            
+
                 .then(() => {
-                    console.log("animate2");
-                    var trianglesAnimate: ng.IPromise<void>[] = [];
-                    this.$scope.$apply(() => {
-                        trianglesAnimate.push(this.$animate.addClass($('#bottom-left-triangle'), 'animate-in'));
-                        trianglesAnimate.push(this.$animate.addClass($('#top-right-triangle'), 'animate-in'));
-                    });
-                    return this.$q.all(trianglesAnimate);
-                }).then(() => {
-                    var curtainsAnimate: ng.IPromise<void>[] = [];
-                    this.$scope.$apply(() => {
-                        curtainsAnimate.push(this.$animate.addClass($('#bottom-left-curtain'), 'animate-out'));
-                        curtainsAnimate.push(this.$animate.addClass($('#top-right-curtain'), 'animate-out'));
-                    });
-                    return this.$q.all(curtainsAnimate);
-                });          
+                console.log("animate2");
+
+                //return null;
+                return this.$q.all([
+                    this.$animate.addClass($('#bottom-left-triangle'), 'animate-in'),
+                    this.$animate.addClass($('#top-right-triangle'), 'animate-in')
+                ]);
+            });
+                //.then(() => {
+                //    var curtainsAnimate: ng.IPromise<void>[] = [];
+               
+                //        curtainsAnimate.push(this.$animate.addClass($('#bottom-left-curtain'), 'animate-out'));
+                //        curtainsAnimate.push(this.$animate.addClass($('#top-right-curtain'), 'animate-out'));
+              
+                //    return this.$q.all(curtainsAnimate);
+                //});          
         }
 
         public startRotation(): void {
